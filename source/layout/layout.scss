@@ -1,0 +1,38 @@
+.layout {
+  position: relative;
+
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    '. main .'
+    'footer footer footer';
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr minmax($content-width-mobile, $content-width-desktop) 1fr;
+  min-height: 100vh;
+
+  column-gap: $desktop-paddings;
+}
+
+.layout__header {
+  grid-area: header;
+}
+
+.layout__main {
+  grid-area: main;
+}
+
+.layout__footer {
+  grid-area: footer;
+}
+
+@include media('<desktop') {
+  .layout {
+    column-gap: $tablet-paddings;
+  }
+}
+
+@include media('<tablet') {
+  .layout {
+    column-gap: $mobile-paddings;
+  }
+}

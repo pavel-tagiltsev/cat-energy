@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "index": {
+      "meta": {
+        "title": "Cat Energy",
+        "description": "Корм для домашних кошек",
+        "preview": "@img/meta-preview.jpg"
+      },
+      "data": {}
+    }
+  }
+}
