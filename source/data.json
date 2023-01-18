@@ -1,12 +1,76 @@
 {
   "pages": {
     "index": {
+      "name": "index",
       "meta": {
         "title": "Cat Energy",
         "description": "Корм для домашних кошек",
         "preview": "@img/meta-preview.jpg"
       },
-      "data": {}
+      "data": {
+        "navigationLinks": [
+          {
+            "text": "Главная",
+            "url": null
+          },
+          {
+            "text": "Каталог продукци",
+            "url": "catalog.html"
+          },
+          {
+            "text": "Подбор программы",
+            "url": "form.html"
+          }
+        ]
+      }
+    },
+    "catalog": {
+      "name": "catalog",
+      "meta": {
+        "title": "Cat Energy",
+        "description": "Корм для домашних кошек",
+        "preview": "@img/meta-preview.jpg"
+      },
+      "data": {
+        "navigationLinks": [
+          {
+            "text": "Главная",
+            "url": "/"
+          },
+          {
+            "text": "Каталог продукци",
+            "url": null
+          },
+          {
+            "text": "Подбор программы",
+            "url": "form.html"
+          }
+        ]
+      }
+    },
+    "form": {
+      "name": "form",
+      "meta": {
+        "title": "Cat Energy",
+        "description": "Корм для домашних кошек",
+        "preview": "@img/meta-preview.jpg"
+      },
+      "data": {
+        "navigationLinks": [
+          {
+            "text": "Главная",
+            "url": "/"
+          },
+          {
+            "text": "Каталог продукци",
+            "url": "catalog.html"
+          },
+          {
+            "text": "Подбор программы",
+            "url": null
+          }
+        ]
+      }
     }
   }
 }

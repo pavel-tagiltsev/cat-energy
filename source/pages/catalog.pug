@@ -1,0 +1,10 @@
+extends ../layout/layout
+
+block varaiables
+  - const meta = pages.catalog.meta
+  - const {navigationLinks, pageName} = pages.catalog.data
+  - const {name} = pages.catalog
+
+block main
+  main(aria-label='Основной контент страницы').page.page--catalog
+    h1= name
