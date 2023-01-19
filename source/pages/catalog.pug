@@ -1,0 +1,10 @@
+extends ../layout/layout
+
+block varaiables
+  - const meta = pages.catalog.meta
+  - const {navigationLinks} = pages.catalog.data
+  - const {page} = pages.catalog
+
+block main
+  .container
+    h1= page

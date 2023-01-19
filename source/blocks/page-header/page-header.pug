@@ -1,0 +1,10 @@
+mixin page-header
+  header(class!=`page-header page-header--${page}`)&attributes(attributes)
+    .page-header__inner.container
+      +logo.page-header__logo
+      nav.page-header__navigation
+        +menu-button('closed').page-header__menu-toggler
+        +navigation.page-header__links
+
+    if page === 'index'
+      +promo.container

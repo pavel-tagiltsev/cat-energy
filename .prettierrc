@@ -33,7 +33,7 @@
   "pugCommentPreserveSpaces": "trim-all",
   "pugClassNotation": "literal",
   "pugIdNotation": "literal",
-  "pugClassLocation": "after-attributes",
+  "pugClassLocation": "before-attributes",
   "pugExplicitDiv": false,
   "pugSortAttributesBeginning": [
     "^cols$",

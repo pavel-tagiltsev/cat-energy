@@ -1,7 +1,7 @@
 {
   "pages": {
     "index": {
-      "name": "index",
+      "page": "index",
       "meta": {
         "title": "Cat Energy",
         "description": "Корм для домашних кошек",
@@ -14,7 +14,7 @@
             "url": null
           },
           {
-            "text": "Каталог продукци",
+            "text": "Каталог продукции",
             "url": "catalog.html"
           },
           {
@@ -25,7 +25,7 @@
       }
     },
     "catalog": {
-      "name": "catalog",
+      "page": "catalog",
       "meta": {
         "title": "Cat Energy",
         "description": "Корм для домашних кошек",
@@ -38,7 +38,7 @@
             "url": "/"
           },
           {
-            "text": "Каталог продукци",
+            "text": "Каталог продукции",
             "url": null
           },
           {
@@ -49,7 +49,7 @@
       }
     },
     "form": {
-      "name": "form",
+      "page": "form",
       "meta": {
         "title": "Cat Energy",
         "description": "Корм для домашних кошек",
@@ -62,7 +62,7 @@
             "url": "/"
           },
           {
-            "text": "Каталог продукци",
+            "text": "Каталог продукции",
             "url": "catalog.html"
           },
           {

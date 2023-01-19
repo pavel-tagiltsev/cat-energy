@@ -16,14 +16,14 @@ export default {
     favicons: `${buildFolder}/`
   },
   source: {
-    pug: `${sourceFolder}/templates/pages/*.pug`,
-    scss: `${sourceFolder}/scss/styles.scss`,
-    js: `${sourceFolder}/js/scripts.js`,
+    pug: `${sourceFolder}/pages/*.pug`,
+    scss: `${sourceFolder}/styles.scss`,
+    js: `${sourceFolder}/scripts.js`,
     images: `${sourceFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${sourceFolder}/images/**/*.svg`,
     files: `${sourceFolder}/files/**/*.*`,
     fonts: `${sourceFolder}/fonts/`,
-    fontStyle: `${sourceFolder}/scss/global/fonts.scss`,
+    fontStyle: `${sourceFolder}/scss/fonts.scss`,
     sprite: {
       stack: `${sourceFolder}/svg/stack/**/*.svg`,
       symbol: `${sourceFolder}/svg/symbol/**/*.svg`

@@ -3,7 +3,8 @@ extends ../layout/layout
 block varaiables
   - const meta = pages.index.meta
   - const {navigationLinks} = pages.index.data
-  - const {name} = pages.index
+  - const {page} = pages.index
 
 block main
-  h1= name
+  .container
+    h1= page

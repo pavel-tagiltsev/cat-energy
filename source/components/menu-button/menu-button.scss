@@ -1,0 +1,50 @@
+.menu-button {
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+  border: none;
+
+  &--opened {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 19px;
+
+      width: 1.5px;
+      height: 24px;
+
+      background-color: $basic_black;
+
+      content: '';
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--closed {
+    &::before {
+      position: absolute;
+      top: 4px;
+      right: 19px;
+
+      width: 1.5px;
+      height: 24px;
+
+      background-color: $basic_black;
+      box-shadow:
+        5px 0 0 0 $basic_black,
+        10px 0 0 0 $basic_black;
+      transform: rotate(90deg);
+
+      content: '';
+    }
+  }
+}

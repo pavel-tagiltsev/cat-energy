@@ -1,0 +1,12 @@
+extends ../base
+
+block layout
+  body.layout
+    +page-header.layout__header
+
+    main.layout__main(aria-label='Основной контент страницы')
+      block main
+
+    +page-footer.layout__footer
+
+    script(src='js/scripts.min.js')

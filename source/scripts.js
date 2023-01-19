@@ -1,4 +1,4 @@
-import log from './modules/module-example.js'
+import log from './js/module-example.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   log('DOMContentLoaded')

@@ -1,0 +1,8 @@
+mixin promo
+  section.promo&attributes(attributes)
+    +title('Функциональное питание для котов', 'h1').promo__title
+    p.promo__lead Занялся собой? Займись котом!
+    +img('index-can', ['png', 'jpg', 'png']).promo__img(
+      alt='Банка корма Cat Energy Pro'
+    )
+    +button('Подобрать программу', 'link').promo__button(href='form.html')

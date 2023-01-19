@@ -3,7 +3,8 @@ extends ../layout/layout
 block varaiables
   - const meta = pages.form.meta
   - const {navigationLinks} = pages.form.data
-  - const {name} = pages.form
+  - const {page} = pages.form
 
 block main
-  h1= name
+  .container
+    h1= page
