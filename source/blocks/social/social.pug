@@ -1,0 +1,17 @@
+mixin social
+  ul.social&attributes(attributes)
+    li.social__item
+      a.social__link.social__link--vk(href='#')
+        span.visually-hidden ВКонтакте
+        svg.social__icon
+          use(xlink:href='@img/stack-sprite.svg#logo-vk')
+    li.social__item
+      a.social__link.social__link--instagram(href='#')
+        span.visually-hidden Instagram
+        svg.social__icon
+          use(xlink:href='@img/stack-sprite.svg#logo-instagram')
+    li.social__item
+      a.social__link.social__link--facebook(href='#')
+        span.visually-hidden Facebook
+        svg.social__icon
+          use(xlink:href='@img/stack-sprite.svg#logo-facebook')

@@ -1,0 +1,40 @@
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  color: $special_dark-grey;
+
+  font-size: 16px;
+
+  &:hover .copyright__logo,
+  &:focus .copyright__logo {
+    fill: $basic_green;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+}
+
+.copyright__logo {
+  width: 27px;
+  height: 34px;
+
+  fill: $special_grey-2;
+}
+
+@include media('>=tablet') {
+  .copyright {
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .copyright__company {
+    margin-right: 24px;
+  }
+}
+
