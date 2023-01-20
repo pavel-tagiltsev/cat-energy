@@ -1,0 +1,140 @@
+.programms {
+  padding-top: 22px;
+}
+
+.programms__list {
+  @include list-style-none;
+}
+
+.programms__item {
+  margin-bottom: 20px;
+  padding-top: 39px;
+  padding-bottom: 19px;
+
+  background-color: $basic_grey;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.programms__title {
+  position: relative;
+
+  margin-top: 0;
+  margin-bottom: 38px;
+  padding-left: 91px;
+
+  color: $basic_black;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: $font_secondary;
+  text-transform: uppercase;
+
+  &--slim::before {
+    position: absolute;
+    top: -20px;
+    left: 23px;
+    z-index: 1;
+
+    width: 50px;
+    height: 53px;
+
+    background-image: url('../images/stack-sprite.svg#icon-cat-slim');
+
+    content: '';
+  }
+
+  &--gain::before {
+    position: absolute;
+    top: -16px;
+    left: 13px;
+    z-index: 1;
+
+    width: 67px;
+    height: 50px;
+
+    background-image: url('../images/stack-sprite.svg#icon-cat-pro');
+
+    content: '';
+  }
+
+  &--slim::after,
+  &--gain::after {
+    position: absolute;
+    top: -15px;
+    left: 22px;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: $basic_green;
+    border-radius: 100%;
+
+    content: '';
+  }
+}
+
+.programms__text {
+  margin: 0;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  margin-left: 20px;
+  padding-bottom: 21px;
+
+  color: $special_dark-grey;
+  line-height: 1.3;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.programms__link {
+  position: relative;
+
+  display: inline-block;
+
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-right: 39px;
+  padding-bottom: 5px;
+
+  color: $basic_black;
+  font-size: 16px;
+  font-family: $font_secondary;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    padding-right: 47px;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+
+  &::before {
+    position: absolute;
+    top: 9px;
+    right: 0;
+
+    width: 24px;
+    height: 12px;
+
+    background-image: url('../images/stack-sprite.svg#icon-right-arrow-long');
+
+    content: '';
+  }
+
+  &:hover::before,
+  &:focus::before {
+    top: 10px;
+    right: 1px;
+
+    width: 32px;
+    height: 10px;
+
+    background-image: url('../images/stack-sprite.svg#icon-right-arrow-verylong');
+
+    content: '';
+  }
+}
