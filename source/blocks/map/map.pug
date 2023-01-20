@@ -1,0 +1,41 @@
+mixin map
+  .map&attributes(attributes)
+    #map.map__ymaps
+    +img('bg-map', ['png', 'png', 'png']).map__image(
+      alt='Адрес компании на карте: Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург'
+      width='320'
+      height='362'
+    )
+    script(type='text/javascript').
+      function init() {
+        const coordinates = [59.938635, 30.323118];
+        let center = coordinates;
+
+        if (window.matchMedia('(min-width: 1440px)').matches) {
+          center = [59.938635, 30.315];
+        }
+
+        const map = new ymaps.Map('map', {
+          center,
+          zoom: 15,
+          controls: [],
+        });
+
+        const placemark = new ymaps.Placemark(
+          coordinates,
+          {
+            hintContent: 'ул. Большая Конюшенная, д. 19/8',
+            balloonContent: 'ул. Большая Конюшенная, д. 19/8',
+          },
+          {
+            iconLayout: 'default#image',
+            iconImageHref: '@img/map-pin.png',
+            iconImageSize: [72.75, 87.5],
+            iconImageOffset: [-35, -80],
+          }
+        );
+
+        map.geoObjects.add(placemark);
+      }
+
+      ymaps.ready(init);

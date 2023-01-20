@@ -32,3 +32,11 @@
     margin-right: 32px;
   }
 }
+
+
+@include media('>=desktop') {
+  .page-footer {
+    padding-top: 58px;
+  }
+}
+

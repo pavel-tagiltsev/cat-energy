@@ -1,0 +1,12 @@
+mixin contacts
+  section.contacts&attributes(attributes)
+    h2.visually-hidden Контакты
+    header.contacts__header.container
+      b.contacts__title
+        | Приглашаем
+        br
+        | к сотрудничеству дилеров!
+      p.contacts__adress
+        | ул. Большая Конюшенная, д. 19/8
+        span= ' Санкт-Петербург'
+    +map.contacts__map
