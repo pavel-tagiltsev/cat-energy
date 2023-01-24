@@ -1,0 +1,17 @@
+mixin slider
+  ul.slider&attributes(attributes)
+    li.example__item.slider__item.slider__item--current
+      +img('before', ['png', 'png', 'png'])(
+        alt='Результат до'
+        width='320'
+        height='240'
+      )
+    li.example__item.slider__item
+      +img('after', ['png', 'png', 'png'])(
+        alt='Результат до'
+        width='320'
+        height='240'
+      )
+  .example__toggels.slider__toggels
+    button.slider__toggle.slider__toggle--current(type='button') Было
+    +scale.slider__scale

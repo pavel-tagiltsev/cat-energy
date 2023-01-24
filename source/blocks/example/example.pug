@@ -1,0 +1,17 @@
+mixin example
+  section.example&attributes(attributes)
+    .container
+      h2.example__title.title Живой пример
+      p.example__text
+        | Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
+        | Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
+        | этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+      dl.example__desc-list
+        .example__desc-inner
+          dt.example__desc-term 5 кг
+          dd.example__desc-description Снижение веса
+        .example__desc-inner
+          dt.example__desc-term 60 дней
+          dd.example__desc-description Затрачено времени
+      p.example__suptitle Затраты на питание: 15 000 РУБ.
+    +slider.example__list

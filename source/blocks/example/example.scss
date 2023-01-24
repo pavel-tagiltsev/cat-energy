@@ -1,0 +1,90 @@
+.example {
+  padding-top: 29px;
+  padding-bottom: 22px;
+
+  background-color: $special_grey-6;
+}
+
+.example__title {
+  margin: 0;
+  margin-bottom: 36px;
+}
+
+.example__text {
+  margin: 0;
+  margin-bottom: 24px;
+  padding-right: 14px;
+
+  line-height: 1.3;
+}
+
+.example__desc-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 36px;
+
+  list-style: none;
+}
+
+.example__desc-inner {
+  position: relative;
+
+  min-width: 124px;
+  padding-top: 16px;
+  padding-bottom: 17px;
+
+  text-align: center;
+
+  border: 1px solid $special_grey;
+  border-radius: 3px;
+}
+
+.example__desc-term {
+  color: $basic_black;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: $font_secondary;
+  text-transform: uppercase;
+}
+
+.example__desc-description {
+  position: absolute;
+  bottom: -18px;
+  left: 16%;
+  z-index: 1;
+
+  width: 82px;
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: lowercase;
+
+  background-color: $special_grey-6;
+}
+
+.example__suptitle {
+  margin: 0;
+  margin-bottom: 36px;
+
+  color: $basic_black;
+  font-family: $font_secondary;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.example__list {
+  @include list-style-none;
+  margin-bottom: 15px;
+}
+
+.example__item {
+  text-align: center;
+}
+
+.example__toggels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
