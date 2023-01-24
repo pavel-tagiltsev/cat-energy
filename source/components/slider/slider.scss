@@ -1,9 +1,19 @@
-.slider__item {
+.slider {
+  @include list-style-none;
+}
+
+.slider__slide {
   display: none;
 
   &--current {
     display: block;
   }
+}
+
+.slider__toggels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slider__toggle {
@@ -15,4 +25,8 @@
 
   background-color: $special_grey-6;
   border: none;
+}
+
+.slider__scale {
+  width: 84px;
 }
