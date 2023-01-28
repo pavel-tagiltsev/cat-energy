@@ -1,0 +1,14 @@
+mixin comparison
+  ul.comparison&attributes(attributes)
+    li.comparison__item.comparison__item--before
+      +img('before', ['png', 'png', 'png']).comparison__image(
+        alt='Изображение кота до похудения'
+        width='320'
+        height='240'
+      )
+    li.comparison__item.comparison__item--after
+      +img('after', ['png', 'png', 'png']).comparison__image(
+        alt='Изображение кота после похудения'
+        width='320'
+        height='240'
+      )

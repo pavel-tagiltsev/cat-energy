@@ -25,7 +25,8 @@ export default function scss() {
           './node_modules/normalize.css/',
           './node_modules/include-media/dist/',
           './node_modules/starability/starability-scss/',
-          './node_modules/starability/starability-scss/starability/'
+          './node_modules/starability/starability-scss/starability/',
+          './node_modules/nouislider/dist/'
         ],
         outputStyle: 'expanded'
       })

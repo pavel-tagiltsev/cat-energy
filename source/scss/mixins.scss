@@ -10,11 +10,11 @@
 }
 
 @mixin container-out-on-tablet {
-  margin: 0 0 - $mobile-tablet;
+  margin: 0 0 - $tablet-paddings;
 }
 
 @mixin container-out-on-desktop {
-  margin: 0 0 - $mobile-dasktop;
+  margin: 0 0 - $desktop-paddings;
 }
 
 @mixin container-in {
