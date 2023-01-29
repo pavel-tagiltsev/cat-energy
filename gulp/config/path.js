@@ -16,7 +16,7 @@ export default {
     favicons: `${buildFolder}/`
   },
   source: {
-    pug: `${sourceFolder}/pages/*.pug`,
+    pug: `${sourceFolder}/pages/*/*.pug`,
     scss: `${sourceFolder}/styles.scss`,
     js: `${sourceFolder}/scripts.js`,
     images: `${sourceFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,

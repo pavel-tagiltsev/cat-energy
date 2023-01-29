@@ -1,0 +1,13 @@
+@import './blocks/page-header/page-header';
+@import './blocks/contacts/contacts';
+@import './blocks/page-footer/page-footer';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout__main {
+  flex-grow: 1;
+}

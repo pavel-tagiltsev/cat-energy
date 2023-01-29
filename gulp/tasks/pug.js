@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename)
 export default function pug() {
   const {src, dest} = app.gulp
   const {build, source} = app.path
-  const {browserSync, replace, pug, data} = app.plugins
+  const {browserSync, replace, pug, data, rename} = app.plugins
 
   return src(source.pug)
     .pipe(app.errorHandler('PUG'))
@@ -24,6 +24,11 @@ export default function pug() {
     )
     .pipe(pug({pretty: app.isDev}))
     .pipe(replace(/@img\//g, 'images/'))
+    .pipe(
+      rename((path) => {
+        path.dirname = ''
+      })
+    )
     .pipe(dest(build.html))
     .pipe(browserSync.stream())
 }
