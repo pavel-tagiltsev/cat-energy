@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('layout-index-body')
+  console.log('layout-body-scripts')
 })

@@ -1,1 +1,1 @@
-console.log('page-index-head')
+console.log('index-head-scripts')
