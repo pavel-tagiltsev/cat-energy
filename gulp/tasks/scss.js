@@ -15,7 +15,7 @@ export default function scss() {
   const {build, source} = app.path
   const {rename, replace, gulpIf, browserSync} = app.plugins
 
-  return src(source.scss)
+  return src(Object.values(source.scss))
     .pipe(app.errorHandler('SCSS'))
     .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(replace(/@img\//g, '../images'))
@@ -31,11 +31,15 @@ export default function scss() {
         outputStyle: 'expanded'
       })
     )
+    .pipe(
+      rename((path) => {
+        path.dirname = ''
+      })
+    )
     .pipe(gulpIf(isBuild, groupCssMediaQueries()))
     .pipe(gulpIf(isBuild, postcss([autoprefixer()])))
     .pipe(gulpIf(isBuild, dest(build.css)))
     .pipe(postcss([csso()]))
-    .pipe(rename('styles.min.css'))
     .pipe(gulpIf(isDev, sourcemaps.write('.')))
     .pipe(dest(build.css))
     .pipe(browserSync.stream())

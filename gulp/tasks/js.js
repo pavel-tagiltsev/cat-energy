@@ -6,12 +6,13 @@ export default function js() {
   const {build, source} = app.path
   const {browserSync} = app.plugins
 
-  return src(source.js)
+  return src(Object.values(source.js))
     .pipe(app.errorHandler('JS'))
     .pipe(
       webpack({
         mode: isBuild ? 'production' : 'development',
-        output: {filename: 'scripts.min.js'}
+        entry: source.js,
+        output: {filename: '[name].min.js'}
       })
     )
     .pipe(dest(build.js))

@@ -1,40 +1,8 @@
-import log from './js/module-example.js'
 import noUiSlider from 'nouislider'
+import debounce from '../../../../shared/libs/debounce.js'
+import throttle from '../../../../shared/libs/throttle.js'
 
-document.addEventListener('DOMContentLoaded', () => {
-  log('DOMContentLoaded')
-
-  function throttle(fn, limit) {
-    let lastFn
-    let lastRan
-    return function () {
-      const context = this
-      const args = arguments
-      if (!lastRan) {
-        fn.apply(context, args)
-        lastRan = Date.now()
-      } else {
-        clearTimeout(lastFn)
-        lastFn = setTimeout(function () {
-          if (Date.now() - lastRan >= limit) {
-            fn.apply(context, args)
-            lastRan = Date.now()
-          }
-        }, limit - (Date.now() - lastRan))
-      }
-    }
-  }
-
-  function debounce(fn, delay) {
-    let timeout
-    return function () {
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        fn.apply(this, arguments)
-      }, delay)
-    }
-  }
-
+export default function a() {
   const slider = document.getElementById('slider')
 
   noUiSlider.create(slider, {
@@ -103,4 +71,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   windowResizeHandler()
   window.addEventListener('resize', debounce(windowResizeHandler, 300))
-})
+}

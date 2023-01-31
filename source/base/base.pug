@@ -1,4 +1,4 @@
-include components/components
+include ../components/components
 
 block varaiables
 
@@ -34,13 +34,17 @@ html(lang='ru')
     meta(property='twitter:description' content=meta.description)
     meta(property='twitter:image' content=meta.preview)
 
-    //- Styles
-    link(href='css/styles.min.css' rel='stylesheet')
+    //- Base styles
+    link(href='css/base.css' rel='stylesheet')
+    block layout-styles
 
-    //- Scripts
-    script(
-      type='text/javascript'
-      src='https://api-maps.yandex.ru/2.1/?apikey=ffb78397-bae9-487a-980a-d69790fc2835&lang=ru_RU'
-    )
+    //- Base header-scripts
+    script(src='js/base-header.min.js')
+    block layout-head-scripts
 
-  block layout
+  body
+    block layout
+
+    //- Base body-scripts
+    script(src='js/base-body.min.js')
+    block layout-body-scripts

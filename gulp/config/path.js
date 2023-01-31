@@ -17,25 +17,36 @@ export default {
   },
   source: {
     pug: `${sourceFolder}/pages/*/*.pug`,
-    scss: `${sourceFolder}/styles.scss`,
-    js: `${sourceFolder}/scripts.js`,
-    images: `${sourceFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
-    svg: `${sourceFolder}/images/**/*.svg`,
-    files: `${sourceFolder}/files/**/*.*`,
-    fonts: `${sourceFolder}/fonts/`,
-    fontStyle: `${sourceFolder}/scss/fonts.scss`,
-    sprite: {
-      stack: `${sourceFolder}/svg/stack/**/*.svg`,
-      symbol: `${sourceFolder}/svg/symbol/**/*.svg`
+    scss: {
+      base: `${sourceFolder}/base/*.scss`,
+      layouts: `${sourceFolder}/layout/*.scss`,
+      pages: `${sourceFolder}/pages/*/*.scss`
     },
-    favicons: `${sourceFolder}/favicons/*.{png,xml,ico,svg,webmanifest}`
+    js: {
+      'base-header': `${sourceFolder}/base/head.js`,
+      'base-body': `${sourceFolder}/base/body.js`,
+      'layout-head': `${sourceFolder}/layout/head.js`,
+      'layout-body': `${sourceFolder}/layout/body.js`,
+      'index-page-head': `${sourceFolder}/pages/index/head.js`,
+      'index-page-body': `${sourceFolder}/pages/index/body.js`
+    },
+    images: `${sourceFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp}`,
+    svg: `${sourceFolder}/assets/images/**/*.svg`,
+    files: `${sourceFolder}/assets/files/**/*.*`,
+    fonts: `${sourceFolder}/assets/fonts/`,
+    fontStyle: `${sourceFolder}/base/styles/fonts.scss`,
+    sprite: {
+      stack: `${sourceFolder}/assets/sprites/svg/stack/**/*.svg`,
+      symbol: `${sourceFolder}/assets/sprites/svg/symbol/**/*.svg`
+    },
+    favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },
   watch: {
     pug: `${sourceFolder}/**/*.pug`,
     scss: `${sourceFolder}/**/*.scss`,
     js: `${sourceFolder}/**/*.js`,
     images: `${sourceFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
-    files: `${sourceFolder}/files/**/*.*`
+    files: `${sourceFolder}/assets/files/**/*.*`
   },
   buildFolder,
   sourceFolder,
