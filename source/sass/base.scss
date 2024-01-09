@@ -1,6 +1,8 @@
-@import '../shared/shared';
+@import 'base/variables';
+@import '../../node_modules/include-media';
+@import 'base/z-indexes';
+@import 'base/mixins';
 @import '../../node_modules/normalize.css';
 @import 'base/fonts';
 @import 'base/helpers';
 @import 'base/global';
-@import 'components';
