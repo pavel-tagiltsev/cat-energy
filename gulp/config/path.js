@@ -23,8 +23,6 @@ export default {
       pages: `${sourceFolder}/pages/*/*.scss`
     },
     js: {
-      'base-header': `${sourceFolder}/base/head.js`,
-      'base-body': `${sourceFolder}/base/body.js`,
       'layout-head': `${sourceFolder}/layout/head.js`,
       'layout-body': `${sourceFolder}/layout/body.js`,
       'index-page-head': `${sourceFolder}/pages/index/head.js`,
