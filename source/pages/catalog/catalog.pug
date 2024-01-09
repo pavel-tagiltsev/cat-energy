@@ -1,5 +1,7 @@
 extends ../../layout/layout
 
+include blocks/catalog-list/catalog-list
+
 block varaiables
   - const meta = pages.catalog.meta
   - const {navigationLinks} = pages.catalog.data
@@ -14,6 +16,7 @@ block page-head-scripts
 block main
   .container
     h1= page
+    +catalog-list
 
 block page-body-scripts
   script(src!=`js/${page}-page-body.min.js`)

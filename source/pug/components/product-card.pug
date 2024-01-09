@@ -1,0 +1,24 @@
+mixin product-card
+  li.product-card&attributes(attributes)
+    .product-card__wrapper.container
+      +img('chicken-big', ['jpg', 'png', 'png']).product-card__img(
+        alt='Изображение продукта'
+        width='140'
+        height='112'
+      )
+      .product-card__description
+        h3.product-card__title
+          | Cat Energy
+          br
+          | pro 1000 г
+        dl.product-card__desc-list
+          .product-card__desc-inner
+            dt.product-card__desc-term Масса
+            dd.product-card__desc-definition 1000 г
+          .product-card__desc-inner
+            dt.product-card__desc-term Вкус
+            dd.product-card__desc-definition Курица
+          .product-card__desc-inner
+            dt.product-card__desc-term Цена
+            dd.product-card__desc-definition 1000 Р.
+      a.product-card__link.button(href='form.html') Заказать
