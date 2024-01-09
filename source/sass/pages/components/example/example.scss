@@ -1,6 +1,6 @@
-@import './weight-loss/weight-loss';
-@import './comparison/comparison';
-@import './slider/slider';
+@import 'components/weight-loss';
+@import 'components/comparison';
+@import 'components/slider';
 
 .example {
   padding-top: 29px;

@@ -1,9 +1,11 @@
-extends ../../layout/layout
+extends ../../../layout/layout
+
+include components/catalog-list
 
 block varaiables
-  - const meta = pages.form.meta
-  - const {navigationLinks} = pages.form.data
-  - const {page} = pages.form
+  - const meta = pages.catalog.meta
+  - const {navigationLinks} = pages.catalog.data
+  - const {page} = pages.catalog
 
 block page-styles
   link(href!=`css/${page}.css` rel='stylesheet')
@@ -14,6 +16,7 @@ block page-head-scripts
 block main
   .container
     h1= page
+    +catalog-list
 
 block page-body-scripts
   script(src!=`js/${page}-page-body.min.js`)
