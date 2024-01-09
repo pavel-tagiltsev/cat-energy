@@ -1,7 +1,7 @@
 @import '../shared/shared';
-@import './blocks/page-header/page-header';
-@import './blocks/contacts/contacts';
-@import './blocks/page-footer/page-footer';
+@import 'layout/header/page-header';
+@import 'layout/contacts/contacts';
+@import 'layout/footer/page-footer';
 
 .layout {
   display: flex;
