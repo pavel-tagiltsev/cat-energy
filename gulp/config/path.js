@@ -16,11 +16,11 @@ export default {
     favicons: `${buildFolder}/`
   },
   source: {
-    pug: `${sourceFolder}/pages/*/*.pug`,
+    pug: `${sourceFolder}/pug/pages/*/*.pug`,
     scss: {
-      base: `${sourceFolder}/base/*.scss`,
-      layouts: `${sourceFolder}/layout/*.scss`,
-      pages: `${sourceFolder}/pages/*/*.scss`
+      base: `${sourceFolder}/sass/base.scss`,
+      layouts: `${sourceFolder}/sass/layout.scss`,
+      pages: `${sourceFolder}/sass/pages/*/*.scss`
     },
     js: {
       'layout-head': `${sourceFolder}/layout/head.js`,
@@ -34,7 +34,7 @@ export default {
     svg: `${sourceFolder}/assets/images/**/*.svg`,
     files: `${sourceFolder}/assets/files/**/*.*`,
     fonts: `${sourceFolder}/assets/fonts/`,
-    fontStyle: `${sourceFolder}/base/styles/fonts.scss`,
+    fontStyle: `${sourceFolder}/sass/base/fonts.scss`,
     sprite: {
       stack: `${sourceFolder}/assets/sprites/svg/stack/**/*.svg`,
       symbol: `${sourceFolder}/assets/sprites/svg/symbol/**/*.svg`
