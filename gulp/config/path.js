@@ -18,9 +18,9 @@ export default {
   source: {
     pug: `${sourceFolder}/pug/pages/*/*.pug`,
     scss: {
-      base: `${sourceFolder}/sass/core/base/base.scss`,
-      layouts: `${sourceFolder}/sass/default/layout/layout.scss`,
-      pages: `${sourceFolder}/sass/default/pages/*/*.scss`
+      base: `${sourceFolder}/sass/entry/base.scss`,
+      layouts: `${sourceFolder}/sass/entry/layout.scss`,
+      pages: `${sourceFolder}/sass/entry/pages/*.scss`
     },
     js: {
       'map': `${sourceFolder}/js/modules/map.js`,

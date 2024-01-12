@@ -1,9 +1,6 @@
-@import "../../core/shared/shared";
-@import '../../core/base/base';
-@import '../components/components';
-@import 'header/page-header';
-@import 'contacts/contacts';
-@import 'footer/page-footer';
+@import 'components/header/page-header';
+@import 'components/contacts/contacts';
+@import 'components/footer/page-footer';
 
 .layout {
   display: flex;
