@@ -1,6 +1,6 @@
-@import "../shared/shared";
-@import '../base';
-@import '../components';
+@import "../../core/shared/shared";
+@import '../../core/base/base';
+@import '../components/components';
 @import 'header/page-header';
 @import 'contacts/contacts';
 @import 'footer/page-footer';
