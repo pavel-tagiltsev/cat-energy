@@ -1,8 +1,8 @@
 import noUiSlider from 'nouislider'
-import debounce from '../../../../shared/libs/debounce.js'
-import throttle from '../../../../shared/libs/throttle.js'
+import debounce from '../helpers/debounce.js'
+import throttle from '../helpers/throttle.js'
 
-export default function a() {
+function a() {
   const slider = document.getElementById('slider')
 
   noUiSlider.create(slider, {
@@ -72,3 +72,5 @@ export default function a() {
   windowResizeHandler()
   window.addEventListener('resize', debounce(windowResizeHandler, 300))
 }
+
+a();

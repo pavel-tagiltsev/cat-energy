@@ -12,7 +12,7 @@ block layout-head-scripts
   script(
     src='https://api-maps.yandex.ru/2.1/?apikey=ffb78397-bae9-487a-980a-d69790fc2835&lang=ru_RU'
   )
-  script(src='js/layout-head.min.js')
+  script(src!=`js/map.min.js`)
   block page-head-scripts
 
 block layout
@@ -27,5 +27,4 @@ block layout
     +page-footer.layout__footer
 
 block layout-body-scripts
-  script(src='js/layout-body.min.js')
   block page-body-scripts

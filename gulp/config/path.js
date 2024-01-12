@@ -23,12 +23,8 @@ export default {
       pages: `${sourceFolder}/sass/pages/*/*.scss`
     },
     js: {
-      'layout-head': `${sourceFolder}/layout/head.js`,
-      'layout-body': `${sourceFolder}/layout/body.js`,
-      'index-page-head': `${sourceFolder}/pages/index/head.js`,
-      'index-page-body': `${sourceFolder}/pages/index/body.js`,
-      'form-page-head': `${sourceFolder}/pages/form/head.js`,
-      'form-page-body': `${sourceFolder}/pages/form/body.js`
+      'map': `${sourceFolder}/js/modules/map.js`,
+      'example': `${sourceFolder}/js/modules/example.js`,
     },
     images: `${sourceFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${sourceFolder}/assets/images/**/*.svg`,

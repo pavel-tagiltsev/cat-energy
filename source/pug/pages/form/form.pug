@@ -8,12 +8,6 @@ block varaiables
 block page-styles
   link(href!=`css/${page}.css` rel='stylesheet')
 
-block page-head-scripts
-  script(src!=`js/${page}-page-head.min.js`)
-
 block main
   .container
     h1= page
-
-block page-body-scripts
-  script(src!=`js/${page}-page-body.min.js`)
