@@ -1,14 +1,64 @@
 mixin comparison
   ul.comparison&attributes(attributes)
     li.comparison__item.comparison__item--before
-      +img('before', ['png', 'png', 'png']).comparison__image(
-        alt='Изображение кота до похудения'
-        width='320'
-        height='240'
-      )
+      picture
+        source(
+          type='image/webp'
+          media=desktopMedia
+          srcset='@img/example/desktop/1x/before.webp, @img/example/desktop/2x/before.webp 2x'
+        )
+        source(
+          type='image/webp'
+          media=tabletMedia
+          srcset='@img/example/tablet/1x/before.webp, @img/example/tablet/2x/before.webp 2x'
+        )
+        source(
+          type='image/webp'
+          srcset='@img/example/mobile/1x/before.webp, @img/example/mobile/2x/before.webp 2x'
+        )
+        source(
+          media=desktopMedia
+          srcset='@img/example/desktop/1x/before.png, @img/example/desktop/2x/before.png 2x'
+        )
+        source(
+          media=tabletMedia
+          srcset='@img/example/tablet/1x/before.png, @img/example/tablet/2x/before.png 2x'
+        )
+        img.comparison__image(
+          src='@img/example/mobile/1x/before.png'
+          srcset='@img/example/mobile/2x/before.png 2x'
+          width='320'
+          height='240'
+          alt='Изображение кота до похудения'
+        )
     li.comparison__item.comparison__item--after
-      +img('after', ['png', 'png', 'png']).comparison__image(
-        alt='Изображение кота после похудения'
-        width='320'
-        height='240'
-      )
+      picture
+        source(
+          type='image/webp'
+          media=desktopMedia
+          srcset='@img/example/desktop/1x/after.webp, @img/example/desktop/2x/after.webp 2x'
+        )
+        source(
+          type='image/webp'
+          media=tabletMedia
+          srcset='@img/example/tablet/1x/after.webp, @img/example/tablet/2x/after.webp 2x'
+        )
+        source(
+          type='image/webp'
+          srcset='@img/example/mobile/1x/after.webp, @img/example/mobile/2x/after.webp 2x'
+        )
+        source(
+          media=desktopMedia
+          srcset='@img/example/desktop/1x/after.png, @img/example/desktop/2x/after.png 2x'
+        )
+        source(
+          media=tabletMedia
+          srcset='@img/example/tablet/1x/after.png, @img/example/tablet/2x/after.png 2x'
+        )
+        img.comparison__image(
+          src='@img/example/mobile/1x/after.png'
+          srcset='@img/example/mobile/2x/after.png 2x'
+          width='320'
+          height='240'
+          alt='Изображение кота после похудения'
+        )
