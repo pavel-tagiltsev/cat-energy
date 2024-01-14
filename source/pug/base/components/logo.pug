@@ -13,11 +13,11 @@ mixin logo(type)
       a.logo(href!=href)&attributes(attributes)
         picture
           source(
-            media='(min-width: 1440px)'
+            media=desktopMedia
             srcset='@img/stack-sprite.svg#logo-desktop'
           )
           source(
-            media='(min-width: 768px)'
+            media=tabletMedia
             srcset='@img/stack-sprite.svg#logo-tablet'
           )
           img.logo__img(
