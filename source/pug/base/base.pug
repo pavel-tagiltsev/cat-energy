@@ -37,15 +37,8 @@ html(lang='ru')
     meta(property='twitter:description' content=meta.description)
     meta(property='twitter:image' content=meta.preview)
 
-    //- Base styles
     link(href='css/base.css' rel='stylesheet')
     block layout-styles
-
-    //- Base header-scripts
-    block layout-head-scripts
-
+    block scripts
   body
     block layout
-
-    //- Base body-scripts
-    block layout-body-scripts

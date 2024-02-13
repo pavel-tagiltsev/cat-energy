@@ -8,12 +8,10 @@ block layout-styles
   link(href='css/layout.css' rel='stylesheet')
   block page-styles
 
-block layout-head-scripts
-  script(
-    src='https://api-maps.yandex.ru/2.1/?apikey=ffb78397-bae9-487a-980a-d69790fc2835&lang=ru_RU'
-  )
-  script(src!=`js/map.min.js`)
-  block page-head-scripts
+append scripts
+  // component - map.pug
+  script(src='https://api-maps.yandex.ru/2.1/?apikey=ffb78397-bae9-487a-980a-d69790fc2835&lang=ru_RU')
+  script(src='js/map.min.js')
 
 block layout
   .layout
@@ -25,6 +23,3 @@ block layout
       +contacts
 
     +page-footer.layout__footer
-
-block layout-body-scripts
-  block page-body-scripts
