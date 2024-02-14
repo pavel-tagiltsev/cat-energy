@@ -1,0 +1,43 @@
+pages:
+  index:
+    page: index
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: "@img/meta-preview.jpg"
+    data:
+      navigationLinks:
+        - text: Главная
+          url:
+        - text: Каталог продукции
+          url: catalog.html
+        - text: Подбор программы
+          url: form.html
+  catalog:
+    page: catalog
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: "@img/meta-preview.jpg"
+    data:
+      navigationLinks:
+        - text: Главная
+          url: "/"
+        - text: Каталог продукции
+          url:
+        - text: Подбор программы
+          url: form.html
+  form:
+    page: form
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: "@img/meta-preview.jpg"
+    data:
+      navigationLinks:
+        - text: Главная
+          url: "/"
+        - text: Каталог продукции
+          url: catalog.html
+        - text: Подбор программы
+          url:
