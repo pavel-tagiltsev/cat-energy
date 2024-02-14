@@ -1,7 +1,6 @@
 import webpack from 'webpack-stream'
 
 export default function js() {
-  const {isBuild} = app
   const {src, dest} = app.gulp
   const {build, source} = app.path
   const {browserSync} = app.plugins
@@ -10,7 +9,7 @@ export default function js() {
     .pipe(app.errorHandler('JS'))
     .pipe(
       webpack({
-        mode: isBuild ? 'production' : 'development',
+        mode: __PROD__ ? 'production' : 'development',
         entry: source.js,
         output: {filename: '[name].min.js'}
       })

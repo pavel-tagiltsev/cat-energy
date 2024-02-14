@@ -14,7 +14,7 @@ export default function pug() {
   return src(source.pug)
     .pipe(app.errorHandler('PUG'))
     .pipe(pug({
-      pretty: app.isDev,
+      pretty: app.__DEV__,
       data: YAML.parse(
           fs.readFileSync(
             path.resolve(__dirname, '..', '..', 'source', 'data.yml'),

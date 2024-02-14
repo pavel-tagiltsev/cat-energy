@@ -5,7 +5,9 @@
     "es2021": true
   },
   "globals": {
-    "app": "readonly"
+    "app": "readonly",
+    "__PROD__": "readonly",
+    "__DEV__": "readonly"
   },
   "extends": "eslint:recommended",
   "parserOptions": {

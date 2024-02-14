@@ -10,14 +10,13 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries'
 const sass = gulpSass(dartSass)
 
 export default function scss() {
-  const {isDev, isBuild} = app
   const {src, dest} = app.gulp
   const {build, source} = app.path
   const {rename, replace, gulpIf, browserSync} = app.plugins
 
   return src(Object.values(source.scss))
     .pipe(app.errorHandler('SCSS'))
-    .pipe(gulpIf(isDev, sourcemaps.init()))
+    .pipe(gulpIf(__DEV__, sourcemaps.init()))
     .pipe(replace(/@img\//g, '../images'))
     .pipe(
       sass({
@@ -36,11 +35,11 @@ export default function scss() {
         path.dirname = ''
       })
     )
-    .pipe(gulpIf(isBuild, groupCssMediaQueries()))
-    .pipe(gulpIf(isBuild, postcss([autoprefixer()])))
-    .pipe(gulpIf(isBuild, dest(build.css)))
+    .pipe(gulpIf(__PROD__, groupCssMediaQueries()))
+    .pipe(gulpIf(__PROD__, postcss([autoprefixer()])))
+    .pipe(gulpIf(__PROD__, dest(build.css)))
     .pipe(postcss([csso()]))
-    .pipe(gulpIf(isDev, sourcemaps.write('.')))
+    .pipe(gulpIf(__DEV__, sourcemaps.write('.')))
     .pipe(dest(build.css))
     .pipe(browserSync.stream())
 }

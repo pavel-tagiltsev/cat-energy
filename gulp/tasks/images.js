@@ -1,7 +1,6 @@
 import imagemin from 'gulp-imagemin'
 
 export default function images() {
-  const {isBuild} = app
   const {src, dest} = app.gulp
   const {build, source} = app.path
   const {newer, gulpIf, browserSync, webp} = app.plugins
@@ -9,13 +8,13 @@ export default function images() {
   return src(source.images)
     .pipe(app.errorHandler('IMAGES'))
     .pipe(newer(build.images))
-    .pipe(gulpIf(isBuild, webp()))
-    .pipe(gulpIf(isBuild, dest(build.images)))
-    .pipe(gulpIf(isBuild, src(source.images)))
-    .pipe(gulpIf(isBuild, newer(build.images)))
+    .pipe(gulpIf(__PROD__, webp()))
+    .pipe(gulpIf(__PROD__, dest(build.images)))
+    .pipe(gulpIf(__PROD__, src(source.images)))
+    .pipe(gulpIf(__PROD__, newer(build.images)))
     .pipe(
       gulpIf(
-        isBuild,
+        __PROD__,
         imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],

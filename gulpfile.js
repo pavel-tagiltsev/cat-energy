@@ -3,9 +3,10 @@ import path from './gulp/config/path.js'
 import plugins from './gulp/config/plugins.js'
 import errorHandler from './gulp/config/errorHandler.js'
 
+global.__PROD__ = process.argv.includes('--build');
+global.__DEV__ = !process.argv.includes('--build');
+
 global.app = {
-  isBuild: process.argv.includes('--build'),
-  isDev: !process.argv.includes('--build'),
   gulp,
   path,
   plugins,
