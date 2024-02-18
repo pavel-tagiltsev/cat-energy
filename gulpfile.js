@@ -17,7 +17,10 @@ global.app = {
 import pug from './gulp/tasks/pug.js'
 import scss from './gulp/tasks/scss.js'
 import reset from './gulp/tasks/reset.js'
-import images from './gulp/tasks/images.js'
+import jpg from './gulp/tasks/images/jpg.js'
+import png from './gulp/tasks/images/png.js'
+import webp from './gulp/tasks/images/webp.js'
+import avif from './gulp/tasks/images/avif.js'
 import js from './gulp/tasks/js.js'
 import files from './gulp/tasks/files.js'
 import favicons from './gulp/tasks/favicons.js'
@@ -41,12 +44,16 @@ function watcher() {
   gulp.watch(path.watch.pug, pug)
   gulp.watch(path.watch.scss, scss)
   gulp.watch(path.watch.js, js)
-  gulp.watch(path.watch.images, images)
+  gulp.watch(path.watch.images.jpg, jpg)
+  gulp.watch(path.watch.images.png, png)
+  gulp.watch(path.watch.images.webp, webp)
+  gulp.watch(path.watch.images.avif, avif)
   gulp.watch(path.watch.files, files)
 }
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, transferWoff, fontStyle)
 const sprite = gulp.parallel(spriteStack, spriteSymbol)
+const images = gulp.parallel(jpg, png, webp, avif)
 const mainTasks = gulp.series(
   fonts,
   sprite,

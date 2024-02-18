@@ -26,7 +26,12 @@ export default {
       'map': `${sourceFolder}/js/modules/map.js`,
       'example': `${sourceFolder}/js/modules/example.js`,
     },
-    images: `${sourceFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp}`,
+    images: {
+      jpg: `${sourceFolder}/assets/images/**/*.jpg`,
+      png: `${sourceFolder}/assets/images/**/*.png`,
+      webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+      avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    },
     svg: `${sourceFolder}/assets/images/**/*.svg`,
     files: `${sourceFolder}/assets/files/**/*.*`,
     fonts: `${sourceFolder}/assets/fonts/`,
@@ -41,7 +46,12 @@ export default {
     pug: `${sourceFolder}/**/*.pug`,
     scss: `${sourceFolder}/**/*.scss`,
     js: `${sourceFolder}/**/*.js`,
-    images: `${sourceFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
+    images: {
+      jpg: `${sourceFolder}/assets/images/**/*.jpg`,
+      png: `${sourceFolder}/assets/images/**/*.png`,
+      webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+      avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    },
     files: `${sourceFolder}/assets/files/**/*.*`
   },
   buildFolder,
