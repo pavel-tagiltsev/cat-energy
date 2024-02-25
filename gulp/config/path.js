@@ -26,6 +26,7 @@ export default {
       'map': `${sourceFolder}/js/modules/map.js`,
       'example': `${sourceFolder}/js/modules/example.js`,
     },
+    img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
     images: {
       jpg: `${sourceFolder}/assets/images/**/*.jpg`,
       png: `${sourceFolder}/assets/images/**/*.png`,
@@ -46,13 +47,15 @@ export default {
     pug: `${sourceFolder}/**/*.pug`,
     scss: `${sourceFolder}/**/*.scss`,
     js: `${sourceFolder}/**/*.js`,
+    img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
     images: {
       jpg: `${sourceFolder}/assets/images/**/*.jpg`,
       png: `${sourceFolder}/assets/images/**/*.png`,
       webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
       avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
     },
-    files: `${sourceFolder}/assets/files/**/*.*`
+    files: `${sourceFolder}/assets/files/**/*.*`,
+    favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },
   buildFolder,
   sourceFolder,

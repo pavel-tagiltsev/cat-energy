@@ -5,8 +5,8 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "dev": "gulp",
-    "build": "gulp build --build",
+    "dev": "dotenv -v MODE=dev gulp",
+    "build": "dotenv -v MODE=prod gulp",
     "zip": "gulp deployZIP --build",
     "deployFTP": "gulp deployFTP --build",
     "deploy": "gulp deploy",
@@ -41,6 +41,7 @@
     "autoprefixer": "^10.4.4",
     "browser-sync": "^2.27.9",
     "del": "^6.0.0",
+    "dotenv-cli": "^7.3.0",
     "eclint": "^2.8.1",
     "editorconfig": "^0.15.3",
     "eslint": "^8.13.0",

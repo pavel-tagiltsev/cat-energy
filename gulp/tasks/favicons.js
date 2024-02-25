@@ -1,5 +1,6 @@
+import gulp from 'gulp';
+const {src, dest} = gulp;
 export default function favicons() {
-  return app.gulp
-    .src(app.path.source.favicons)
-    .pipe(app.gulp.dest(app.path.build.favicons))
+  return src(app.path.source.favicons)
+    .pipe(dest(app.path.build.favicons))
 }

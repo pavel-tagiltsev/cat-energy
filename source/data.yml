@@ -4,7 +4,7 @@ pages:
     meta:
       title: Cat Energy
       description: Корм для домашних кошек
-      preview: "@img/meta-preview.jpg"
+      preview: @img/meta-preview.jpg
     data:
       navigationLinks:
         - text: Главная
@@ -18,11 +18,11 @@ pages:
     meta:
       title: Cat Energy
       description: Корм для домашних кошек
-      preview: "@img/meta-preview.jpg"
+      preview: @img/meta-preview.jpg
     data:
       navigationLinks:
         - text: Главная
-          url: "/"
+          url: /
         - text: Каталог продукции
           url:
         - text: Подбор программы
@@ -32,11 +32,11 @@ pages:
     meta:
       title: Cat Energy
       description: Корм для домашних кошек
-      preview: "@img/meta-preview.jpg"
+      preview: @img/meta-preview.jpg
     data:
       navigationLinks:
         - text: Главная
-          url: "/"
+          url: /
         - text: Каталог продукции
           url: catalog.html
         - text: Подбор программы

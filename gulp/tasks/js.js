@@ -1,19 +1,32 @@
-import webpack from 'webpack-stream'
+import gulp from 'gulp';
+import webpack from 'webpack-stream';
 
-export default function js() {
-  const {src, dest} = app.gulp
-  const {build, source} = app.path
-  const {browserSync} = app.plugins
+const {src, dest} = gulp;
 
-  return src(Object.values(source.js))
-    .pipe(app.errorHandler('JS'))
-    .pipe(
-      webpack({
-        mode: __PROD__ ? 'production' : 'development',
-        entry: source.js,
-        output: {filename: '[name].min.js'}
-      })
-    )
-    .pipe(dest(build.js))
-    .pipe(browserSync.stream())
-}
+const strategy = {};
+
+strategy.dev = function js() {
+  return src(Object.values(app.path.source.js))
+    .pipe(app.errorHandler('js:dev'))
+    .pipe(webpack({
+      mode: 'development',
+      entry: app.path.source.js,
+      output: {filename: '[name].min.js'}
+    }))
+    .pipe(dest(app.path.build.js))
+    .pipe(app.plugins.browserSync.stream())
+};
+
+strategy.prod = function js() {
+  return src(Object.values(app.path.source.js))
+    .pipe(app.errorHandler('js:prod'))
+    .pipe(webpack({
+      mode: 'production',
+      entry: app.path.source.js,
+      output: {filename: '[name].min.js'}
+    }))
+    .pipe(dest(app.path.build.js))
+};
+
+strategy.default = strategy.dev;
+export default strategy[process.env.MODE] || strategy.default;

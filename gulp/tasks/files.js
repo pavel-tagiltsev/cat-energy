@@ -1,5 +1,6 @@
+import gulp from 'gulp';
+const {src, dest} = gulp;
 export default function files() {
-  return app.gulp
-    .src(app.path.source.files)
-    .pipe(app.gulp.dest(app.path.build.files))
+  return src(app.path.source.files)
+    .pipe(dest(app.path.build.files))
 }
