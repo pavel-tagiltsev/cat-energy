@@ -7,6 +7,8 @@ import autoprefixer from 'autoprefixer'
 import groupCssMediaQueries from 'gulp-group-css-media-queries'
 import sourcemaps from "gulp-sourcemaps";
 import rev from 'gulp-rev';
+import {readFileSync} from "node:fs";
+import revRewrite from "gulp-rev-rewrite";
 
 const sass = gulpSass(dartSass)
 const {src, dest} = gulp;
@@ -40,6 +42,8 @@ strategy.dev = function scss() {
 };
 
 strategy.prod = function scss() {
+  const manifest = readFileSync(app.path.build.manifest);
+
   return src(Object.values(app.path.source.scss))
     .pipe(app.errorHandler('scss:prod'))
     .pipe(app.plugins.replace(/@img\//g, '../img'))
@@ -53,6 +57,7 @@ strategy.prod = function scss() {
     .pipe(groupCssMediaQueries())
     .pipe(postcss([autoprefixer()]))
     .pipe(postcss([csso()]))
+    .pipe(revRewrite({ manifest }))
     .pipe(rev())
     .pipe(dest(app.path.build.css))
     .pipe(rev.manifest({

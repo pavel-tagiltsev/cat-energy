@@ -9,14 +9,14 @@
   background-color: $basic_green-3;
   background-image:
     linear-gradient(to top, $basic_white 175px, transparent 175px),
-    url('../images/index-background-mobile@1x.jpg');
+    url('../images/promo/mobile/1x/bg.jpg');
   background-repeat: no-repeat;
   background-position: top center;
 
   @include media('retina2x') {
     background-image:
       linear-gradient(to top, $basic_white 175px, transparent 175px),
-      url('../images/index-background-mobile@2x.jpg');
+      url('../images/promo/mobile/2x/bg.jpg');
     background-size: auto, 320px;
   }
 }

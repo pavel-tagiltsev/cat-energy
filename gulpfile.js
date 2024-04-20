@@ -47,12 +47,12 @@ const prod = series(
   reset,
   fonts,
   parallel(
-    scss,
     img,
     svg,
     files,
     favicons
   ),
+  scss,
   js,
   pug,
 )

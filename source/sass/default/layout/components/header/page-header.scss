@@ -53,7 +53,7 @@
       background-color: $basic_green-3;
       background-image:
         linear-gradient(to right, $basic_white 50%, transparent 50%),
-        url('../images/index-background-desktop@1x.jpg');
+        url('../images/promo/desktop/1x/bg.jpg');
       background-repeat: no-repeat;
       background-position: top right;
     }
@@ -64,7 +64,7 @@
   .page-header--index {
     background-image:
       linear-gradient(to right, $basic_white 50%, transparent 50%),
-      url('../images/index-background-desktop@2x.jpg');
+      url('../images/promo/desktop/2x/bg.jpg');
     background-size: auto, 718px;
   }
 }
