@@ -13,7 +13,8 @@ export default {
     images: `${buildFolder}/images/`,
     files: `${buildFolder}/files/`,
     fonts: `${buildFolder}/fonts/`,
-    favicons: `${buildFolder}/`
+    favicons: `${buildFolder}/`,
+    manifest: `${buildFolder}/rev-manifest.json`
   },
   source: {
     pug: `${sourceFolder}/pug/pages/*/*.pug`,

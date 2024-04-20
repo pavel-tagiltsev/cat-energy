@@ -6,6 +6,7 @@ import postcss from 'gulp-postcss'
 import autoprefixer from 'autoprefixer'
 import groupCssMediaQueries from 'gulp-group-css-media-queries'
 import sourcemaps from "gulp-sourcemaps";
+import rev from 'gulp-rev';
 
 const sass = gulpSass(dartSass)
 const {src, dest} = gulp;
@@ -51,9 +52,15 @@ strategy.prod = function scss() {
     }))
     .pipe(groupCssMediaQueries())
     .pipe(postcss([autoprefixer()]))
-    .pipe(dest(app.path.build.css))
     .pipe(postcss([csso()]))
+    .pipe(rev())
     .pipe(dest(app.path.build.css))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 };
 
 strategy.default = strategy.dev;

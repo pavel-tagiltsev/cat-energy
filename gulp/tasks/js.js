@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import webpack from 'webpack-stream';
+import rev from "gulp-rev";
 
 const {src, dest} = gulp;
 
@@ -25,7 +26,14 @@ strategy.prod = function js() {
       entry: app.path.source.js,
       output: {filename: '[name].min.js'}
     }))
+    .pipe(rev())
     .pipe(dest(app.path.build.js))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 };
 
 strategy.default = strategy.dev;

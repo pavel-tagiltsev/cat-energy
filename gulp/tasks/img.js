@@ -4,6 +4,7 @@ import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminPngquant from 'imagemin-pngquant';
 import imageminWebp from 'imagemin-webp';
 import imageminAvif from "imagemin-avif";
+import rev from "gulp-rev";
 
 const {src, dest, parallel} = gulp;
 
@@ -16,7 +17,14 @@ function jpg() {
     })], {
       verbose: true
     }))
+    .pipe(rev())
     .pipe(dest(app.path.build.images))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 }
 
 function png() {
@@ -29,7 +37,14 @@ function png() {
     })], {
       verbose: true
     }))
+    .pipe(rev())
     .pipe(dest(app.path.build.images))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 }
 
 function webp() {
@@ -44,7 +59,14 @@ function webp() {
     .pipe(app.plugins.rename({
       extname: ".webp"
     }))
+    .pipe(rev())
     .pipe(dest(app.path.build.images))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 }
 
 function avif() {
@@ -59,7 +81,14 @@ function avif() {
     .pipe(app.plugins.rename({
       extname: ".avif"
     }))
+    .pipe(rev())
     .pipe(dest(app.path.build.images))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
 }
 
 const strategy = {};

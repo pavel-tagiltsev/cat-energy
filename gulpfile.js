@@ -32,7 +32,6 @@ const dev = series(
   reset,
   fonts,
   parallel(
-    pug,
     scss,
     js,
     img,
@@ -40,6 +39,7 @@ const dev = series(
     files,
     favicons
   ),
+  pug,
   parallel(watcher, server),
 )
 
@@ -47,7 +47,6 @@ const prod = series(
   reset,
   fonts,
   parallel(
-    pug,
     scss,
     js,
     img,
@@ -55,6 +54,7 @@ const prod = series(
     files,
     favicons
   ),
+  pug,
 )
 
 const strategy = {
