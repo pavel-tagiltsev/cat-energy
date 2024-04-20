@@ -1,9 +1,8 @@
 mixin navigation
   ul.navigation&attributes(attributes)
-    each link in navigationLinks
-      if link.url === null
-        li.navigation__item
-          a(class!=`navigation__link navigation__link--${page} navigation__link--active`)= link.text
-      else
-        li.navigation__item
-          a(class!=`navigation__link navigation__link--${page}` href!=link.url)= link.text
+    li.navigation__item
+      a(class!=`navigation__link navigation__link--${page} ${page === 'index' ? 'navigation__link--active' : ''}` href!=pages.index.url) Главная
+    li.navigation__item
+      a(class!=`navigation__link navigation__link--${page} ${page === 'catalog' ? 'navigation__link--active' : ''}` href!=pages.catalog.url) Каталог продукции
+    li.navigation__item
+      a(class!=`navigation__link navigation__link--${page} ${page === 'form' ? 'navigation__link--active' : ''}` href!=pages.form.url) Подбор программы
