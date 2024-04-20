@@ -24,8 +24,10 @@ export default {
       pages: `${sourceFolder}/sass/entry/pages/*.scss`
     },
     js: {
-      'map': `${sourceFolder}/js/modules/map.js`,
-      'example': `${sourceFolder}/js/modules/example.js`,
+      'index': `${sourceFolder}/js/pages/Index.js`,
+      'catalog': `${sourceFolder}/js/pages/Catalog.js`,
+      'form': `${sourceFolder}/js/pages/Form.js`,
+      'layout': `${sourceFolder}/js/layout/Layout.js`,
     },
     img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
     images: {

@@ -6,7 +6,7 @@
 </script>
 */
 
-function init() {
+export default function init() {
   const coordinates = [59.938635, 30.323118]
   let center = coordinates
 
@@ -28,7 +28,7 @@ function init() {
     },
     {
       iconLayout: 'default#image',
-      iconImageHref: './images/pin.png',
+      iconImageHref: './images/map/pin.png',
       iconImageSize: [72.75, 87.5],
       iconImageOffset: [-35, -80]
     }
@@ -36,5 +36,3 @@ function init() {
 
   map.geoObjects.add(placemark)
 }
-
-ymaps.ready(init)

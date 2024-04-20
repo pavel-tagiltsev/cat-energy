@@ -1,6 +1,8 @@
 import gulp from 'gulp';
 import webpack from 'webpack-stream';
 import rev from "gulp-rev";
+import {readFileSync} from "node:fs";
+import revRewrite from "gulp-rev-rewrite";
 
 const {src, dest} = gulp;
 
@@ -19,6 +21,8 @@ strategy.dev = function js() {
 };
 
 strategy.prod = function js() {
+  const manifest = readFileSync(app.path.build.manifest);
+
   return src(Object.values(app.path.source.js))
     .pipe(app.errorHandler('js:prod'))
     .pipe(webpack({
@@ -26,6 +30,7 @@ strategy.prod = function js() {
       entry: app.path.source.js,
       output: {filename: '[name].min.js'}
     }))
+    .pipe(revRewrite({ manifest }))
     .pipe(rev())
     .pipe(dest(app.path.build.js))
     .pipe(rev.manifest({
