@@ -13,7 +13,7 @@ export default {
     images: `${buildFolder}/images/`,
     files: `${buildFolder}/files/`,
     fonts: `${buildFolder}/fonts/`,
-    favicons: `${buildFolder}/`,
+    favicons: `${buildFolder}/favicons/`,
     manifest: `${buildFolder}/rev-manifest.json`
   },
   source: {
