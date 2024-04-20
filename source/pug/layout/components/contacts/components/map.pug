@@ -2,20 +2,21 @@ mixin map
   .map&attributes(attributes)
     #map.map__ymaps
     picture
-      source(
-        type='image/webp'
-        media=desktopMedia
-        srcset='@img/map/desktop/1x/map.webp, @img/map/desktop/2x/map.webp 2x'
-      )
-      source(
-        type='image/webp'
-        media=tabletMedia
-        srcset='@img/map/tablet/1x/map.webp, @img/map/tablet/2x/map.webp 2x'
-      )
-      source(
-        type='image/webp'
-        srcset='@img/map/mobile/1x/map.webp, @img/map/mobile/2x/map.webp 2x'
-      )
+      if process.env.MODE === 'prod'
+        source(
+          type='image/webp'
+          media=desktopMedia
+          srcset='@img/map/desktop/1x/map.webp, @img/map/desktop/2x/map.webp 2x'
+        )
+        source(
+          type='image/webp'
+          media=tabletMedia
+          srcset='@img/map/tablet/1x/map.webp, @img/map/tablet/2x/map.webp 2x'
+        )
+        source(
+          type='image/webp'
+          srcset='@img/map/mobile/1x/map.webp, @img/map/mobile/2x/map.webp 2x'
+        )
       source(
         media=desktopMedia
         srcset='@img/map/desktop/1x/map.png, @img/map/desktop/2x/map.png 2x'

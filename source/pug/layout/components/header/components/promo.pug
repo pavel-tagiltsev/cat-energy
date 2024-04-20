@@ -3,20 +3,21 @@ mixin promo
     +title('Функциональное питание для котов', 'h1').promo__title
     p.promo__lead Занялся собой? Займись котом!
     picture
-      source(
-        type='image/webp'
-        media=desktopMedia
-        srcset='@img/promo/desktop/1x/product.webp, @img/promo/desktop/2x/product.webp 2x'
-      )
-      source(
-        type='image/webp'
-        media=tabletMedia
-        srcset='@img/promo/tablet/1x/product.webp, @img/promo/tablet/2x/product.webp 2x'
-      )
-      source(
-        type='image/webp'
-        srcset='@img/promo/mobile/1x/product.webp, @img/promo/mobile/2x/product.webp 2x'
-      )
+      if process.env.MODE === 'prod'
+        source(
+          type='image/webp'
+          media=desktopMedia
+          srcset='@img/promo/desktop/1x/product.webp, @img/promo/desktop/2x/product.webp 2x'
+        )
+        source(
+          type='image/webp'
+          media=tabletMedia
+          srcset='@img/promo/tablet/1x/product.webp, @img/promo/tablet/2x/product.webp 2x'
+        )
+        source(
+          type='image/webp'
+          srcset='@img/promo/mobile/1x/product.webp, @img/promo/mobile/2x/product.webp 2x'
+        )
       source(
         media=desktopMedia
         srcset='@img/promo/desktop/1x/product.png, @img/promo/desktop/2x/product.png 2x'

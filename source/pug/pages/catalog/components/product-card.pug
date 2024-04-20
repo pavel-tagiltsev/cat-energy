@@ -2,20 +2,21 @@ mixin product-card
   li.product-card&attributes(attributes)
     .product-card__wrapper.container
       picture
-        source(
-          type='image/webp'
-          media=desktopMedia
-          srcset='@img/products/desktop/1x/chicken-big.webp, @img/products/desktop/2x/chicken-big.webp 2x'
-        )
-        source(
-          type='image/webp'
-          media=tabletMedia
-          srcset='@img/products/tablet/1x/chicken-big.webp, @img/products/tablet/2x/chicken-big.webp 2x'
-        )
-        source(
-          type='image/webp'
-          srcset='@img/products/mobile/1x/chicken-big.webp, @img/products/mobile/2x/chicken-big.webp 2x'
-        )
+        if process.env.MODE === 'prod'
+          source(
+            type='image/webp'
+            media=desktopMedia
+            srcset='@img/products/desktop/1x/chicken-big.webp, @img/products/desktop/2x/chicken-big.webp 2x'
+          )
+          source(
+            type='image/webp'
+            media=tabletMedia
+            srcset='@img/products/tablet/1x/chicken-big.webp, @img/products/tablet/2x/chicken-big.webp 2x'
+          )
+          source(
+            type='image/webp'
+            srcset='@img/products/mobile/1x/chicken-big.webp, @img/products/mobile/2x/chicken-big.webp 2x'
+          )
         source(
           media=desktopMedia
           srcset='@img/products/desktop/1x/chicken-big.png, @img/products/desktop/2x/chicken-big.png 2x'
