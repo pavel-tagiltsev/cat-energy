@@ -1,42 +1,12 @@
 import gulp from 'gulp';
+import imagemin from "gulp-imagemin";
+import { stacksvg } from "gulp-stacksvg";
 
 const {src, dest} = gulp;
 
-const config = {
-  shape: {
-    transform: [
-      {
-        svgo: {
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  removeViewBox: false,
-                  removeUnusedNS: false,
-                  cleanupIDs: false
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
-  },
-  mode: {
-    stack: {
-      dest: '.',
-      sprite: 'stack-sprite.svg',
-      rootviewbox: false
-    }
-  }
-}
-
-export default function svg() {
-  const {build, source} = app.path
-
-  return src(source.sprite.stack)
-    .pipe(app.errorHandler('svg'))
-    .pipe(app.plugins.svgSprite(config))
-    .pipe(dest(build.images))
+export default function sprite () {
+  return src(app.path.source.sprite)
+    .pipe(stacksvg({ output: `stack-sprite` }))
+    .pipe(imagemin())
+    .pipe(dest(app.path.build.images))
 }

@@ -37,10 +37,7 @@ export default {
     files: `${sourceFolder}/assets/files/**/*.*`,
     fonts: `${sourceFolder}/assets/fonts/`,
     fontStyle: `${sourceFolder}/sass/base/fonts.scss`,
-    sprite: {
-      stack: `${sourceFolder}/assets/sprites/svg/stack/**/*.svg`,
-      symbol: `${sourceFolder}/assets/sprites/svg/symbol/**/*.svg`
-    },
+    sprite: `${sourceFolder}/assets/sprite/**/*.svg`,
     favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },
   watch: {
@@ -54,6 +51,7 @@ export default {
       webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
       avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
     },
+    sprite: `${sourceFolder}/assets/sprite/**/*.svg`,
     files: `${sourceFolder}/assets/files/**/*.*`,
     favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },

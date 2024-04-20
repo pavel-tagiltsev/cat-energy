@@ -24,6 +24,7 @@ function watcher() {
   watch(app.path.watch.img, img);
   watch(app.path.watch.files, files);
   watch(app.path.watch.favicons, favicons);
+  watch(app.path.watch.sprite, svg);
   watch(app.path.source.fonts + '**/*.{woff,woff2}', fonts);
 }
 
