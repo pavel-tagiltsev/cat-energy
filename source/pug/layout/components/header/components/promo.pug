@@ -2,35 +2,5 @@ mixin promo
   section.promo&attributes(attributes)
     +title('Функциональное питание для котов', 'h1').promo__title
     p.promo__lead Занялся собой? Займись котом!
-    picture
-      if process.env.MODE === 'prod'
-        source(
-          type='image/webp'
-          media=desktopMedia
-          srcset='@img/promo/desktop/1x/product.webp, @img/promo/desktop/2x/product.webp 2x'
-        )
-        source(
-          type='image/webp'
-          media=tabletMedia
-          srcset='@img/promo/tablet/1x/product.webp, @img/promo/tablet/2x/product.webp 2x'
-        )
-        source(
-          type='image/webp'
-          srcset='@img/promo/mobile/1x/product.webp, @img/promo/mobile/2x/product.webp 2x'
-        )
-      source(
-        media=desktopMedia
-        srcset='@img/promo/desktop/1x/product.png, @img/promo/desktop/2x/product.png 2x'
-      )
-      source(
-        media=tabletMedia
-        srcset='@img/promo/tablet/1x/product.jpg, @img/promo/tablet/2x/product.jpg 2x'
-      )
-      img.promo__img(
-        src='@img/promo/mobile/1x/product.png'
-        srcset='@img/promo/mobile/2x/product.png 2x'
-        width="280"
-        height="271"
-        alt='Банка корма Cat Energy Pro'
-      )
+    +img(images.promo)(width="280" height="271" alt='Банка корма Cat Energy Pro').promo__img
     +button('Подобрать программу', 'link').promo__button(href='form.html')

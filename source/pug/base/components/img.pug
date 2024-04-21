@@ -1,0 +1,71 @@
+mixin img(img)
+  -
+    const image = img || {
+      dir: 'example',
+      mobile: {
+        file: 'mobile-file.jpg',
+        retina: true,
+      },
+      tablet: {
+        file: 'tablet-file.jpg',
+        retina: true,
+      },
+      desktop: {
+        file: 'desktop-file.jpg',
+        retina: true,
+      },
+    }
+
+    function getString(type, ext) {
+      return `@img/${image.dir}/${type}/1x/${image[type].file.split('.')[0]}.${ext ? ext : image[type].file.split('.')[1]}`;
+    }
+
+    function getRetinaString(type, ext, first) {
+      if (first) {
+        return `@img/${image.dir}/${type}/2x/${image[type].file.split('.')[0]}.${ext ? ext : image[type].file.split('.')[1]} 2x`;
+      }
+
+      return `, @img/${image.dir}/${type}/2x/${image[type].file.split('.')[0]}.${ext ? ext : image[type].file.split('.')[1]} 2x`;
+    }
+
+  picture.img_wrp
+    if process.env.MODE === 'prod'
+      if image.desktop
+        source(
+          type='image/avif'
+          media=desktopMedia
+          srcset=getString('desktop', 'avif') + (image.desktop.retina ? getRetinaString('desktop', 'avif') : ''))
+      if image.tablet
+        source(
+          type='image/avif'
+          media=tabletMedia
+          srcset=getString('tablet', 'avif') + (image.tablet.retina ? getRetinaString('tablet', 'avif') : ''))
+      if image.mobile
+        source(
+          type='image/avif'
+          srcset=getString('mobile', 'avif') + (image.mobile.retina ? getRetinaString('mobile', 'avif') : ''))
+      if image.desktop
+        source(
+          type='image/webp'
+          media=desktopMedia
+          srcset=getString('desktop', 'webp') + (image.desktop.retina ? getRetinaString('desktop', 'webp') : ''))
+      if image.tablet
+        source(
+          type='image/webp'
+          media=tabletMedia
+          srcset=getString('tablet', 'webp') + (image.tablet.retina ? getRetinaString('tablet', 'webp') : ''))
+      if image.mobile
+        source(
+          type='image/webp'
+          srcset=getString('mobile', 'webp') + (image.mobile.retina ? getRetinaString('mobile', 'webp') : ''))
+    if image.desktop
+      source(
+        media=desktopMedia
+        srcset=getString('desktop') + (image.desktop.retina ? getRetinaString('desktop') : ''))
+    if image.tablet
+      source(
+        media=tabletMedia
+        srcset=getString('tablet') + (image.tablet.retina ? getRetinaString('tablet') : ''))
+    if image.mobile
+      img.img(
+        src=getString('mobile') srcset=(image.mobile.retina ? getRetinaString('mobile', null, true) : ''))&attributes(attributes)

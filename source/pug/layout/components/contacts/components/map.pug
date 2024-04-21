@@ -1,34 +1,8 @@
 mixin map
   .map&attributes(attributes)
     #map.map__ymaps
-    picture
-      if process.env.MODE === 'prod'
-        source(
-          type='image/webp'
-          media=desktopMedia
-          srcset='@img/map/desktop/1x/map.webp, @img/map/desktop/2x/map.webp 2x'
-        )
-        source(
-          type='image/webp'
-          media=tabletMedia
-          srcset='@img/map/tablet/1x/map.webp, @img/map/tablet/2x/map.webp 2x'
-        )
-        source(
-          type='image/webp'
-          srcset='@img/map/mobile/1x/map.webp, @img/map/mobile/2x/map.webp 2x'
-        )
-      source(
-        media=desktopMedia
-        srcset='@img/map/desktop/1x/map.png, @img/map/desktop/2x/map.png 2x'
-      )
-      source(
-        media=tabletMedia
-        srcset='@img/map/tablet/1x/map.png, @img/map/tablet/2x/map.png 2x'
-      )
-      img.map__image(
-        src='@img/map/mobile/1x/map.png'
-        srcset='@img/map/mobile/2x/map.png 2x'
-        width='320'
-        height='362'
-        alt='Адрес компании на карте: Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург'
-      )
+    +img(images.map)(
+      width='320'
+      height='362'
+      alt='Адрес компании на карте: Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург'
+    ).map__image
