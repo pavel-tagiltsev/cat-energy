@@ -10,10 +10,10 @@ block append variables
 block page-styles
   link(href!=`css/${page}.css` rel='stylesheet')
 
-append scripts
-  script(src='js/catalog.min.js' defer)
-
 block main
-  .container
+  div(data-barba="container" data-barba-namespace!=`${page}`).container
     h1= page
     +catalog-list
+
+block page-script
+  script(src!=`js/${page}.min.js`)

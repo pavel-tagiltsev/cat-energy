@@ -42,5 +42,9 @@ html(lang='ru')
     link(href='css/base.css' rel='stylesheet')
     block layout-styles
     block scripts
-  body
+      script(src='js/transition.min.js' defer)
+  body(data-barba="wrapper")
+    .page-transition-cover
     block layout
+
+    block page-script

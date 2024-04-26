@@ -87,6 +87,8 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.12.5",
     "normalize.css": "^8.0.1",
     "nouislider": "^15.6.1"
   }

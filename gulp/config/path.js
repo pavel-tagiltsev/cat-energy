@@ -28,6 +28,7 @@ export default {
       'catalog': `${sourceFolder}/js/pages/Catalog.js`,
       'form': `${sourceFolder}/js/pages/Form.js`,
       'layout': `${sourceFolder}/js/layout/Layout.js`,
+      'transition': `${sourceFolder}/js/pages/transition/Transition.js`,
     },
     img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
     images: {

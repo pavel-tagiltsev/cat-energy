@@ -1,8 +1,8 @@
 mixin navigation
   ul.navigation&attributes(attributes)
     li.navigation__item
-      a(class!=`navigation__link navigation__link--${page} ${page === 'index' ? 'navigation__link--active' : ''}` href!=pages.index.url) Главная
+      a(class!=`navigation__link navigation__link--${page} ${page === 'index' ? 'navigation__link--active' : ''}` href!= page === 'index' ? '#' : pages.index.url) Главная
     li.navigation__item
-      a(class!=`navigation__link navigation__link--${page} ${page === 'catalog' ? 'navigation__link--active' : ''}` href!=pages.catalog.url) Каталог продукции
+      a(class!=`navigation__link navigation__link--${page} ${page === 'catalog' ? 'navigation__link--active' : ''}` href!= page === 'catalog' ? '#' : pages.catalog.url) Каталог продукции
     li.navigation__item
-      a(class!=`navigation__link navigation__link--${page} ${page === 'form' ? 'navigation__link--active' : ''}` href!=pages.form.url) Подбор программы
+      a(class!=`navigation__link navigation__link--${page} ${page === 'form' ? 'navigation__link--active' : ''}` href!= page === 'form' ? '#' : pages.form.url) Подбор программы

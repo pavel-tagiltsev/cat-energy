@@ -7,6 +7,7 @@ class Index extends Page {
   }
 
   init() {
+    console.log('Index init')
     new SliderBeforeAndAfter().init();
   }
 }
