@@ -61,9 +61,17 @@ block main
         .example__comparison-wrapper
           ul.comparison.example__comparison
             li.comparison__item.comparison__item--before
-              +img(images.slider.before)(width=320 height=240 alt='Изображение кота до похудения').comparison__image
+              +img(images.slider.before)(
+                width=320
+                height=240
+                alt='Изображение кота до похудения'
+              ).comparison__image
             li.comparison__item.comparison__item--after
-              +img(images.slider.after)(width=320 height=240 alt='Изображение кота после похудения').comparison__image
+              +img(images.slider.after)(
+                width=320
+                height=240
+                alt='Изображение кота после похудения'
+              ).comparison__image
           .slider.example__slider
             button.slider__toggle.slider__toggle--before(type='button')
               span.slider__underlining Было
