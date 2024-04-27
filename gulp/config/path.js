@@ -17,7 +17,7 @@ export default {
     manifest: `${buildFolder}/rev-manifest.json`
   },
   source: {
-    pug: `${sourceFolder}/pug/pages/*/*.pug`,
+    pug: `${sourceFolder}/pug/pages/*.pug`,
     scss: {
       base: `${sourceFolder}/sass/entry/base.scss`,
       layouts: `${sourceFolder}/sass/entry/layout.scss`,

@@ -1,3 +1,5 @@
+extends ../layout/layout
+
 mixin product-card
   li.product-card&attributes(attributes)
     .product-card__wrapper.container
@@ -22,3 +24,22 @@ mixin product-card
             dt.product-card__desc-term Цена
             dd.product-card__desc-definition 1000 Р.
       a.product-card__link.button(href='form.html') Заказать
+
+block append variables
+  - const meta = pages.catalog.meta
+  - const {page} = pages.catalog
+
+block page-styles
+  link(href!=`css/${page}.css` rel='stylesheet')
+
+block main
+  div(data-barba="container" data-barba-namespace!=`${page}`).container
+    h1= page
+    ul
+      +product-card
+      +product-card
+      +product-card
+      +product-card
+
+block page-script
+  script(src!=`js/${page}.min.js`)
