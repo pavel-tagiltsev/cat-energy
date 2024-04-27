@@ -1,0 +1,48 @@
+.ce_field {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &.__with_icon {
+    & .cef_label {
+      margin-right: 10px;
+    }
+
+    & .cef_input {
+      padding-right: 40px;
+
+      &:focus ~ .cef_icon {
+        fill: $basic_green;
+      }
+    }
+  }
+
+  & .cef_label {
+    flex-shrink: 0;
+    margin-right: 15px;
+
+    font-size: 16px;
+    font-family: $font-family-secondary;
+    text-transform: uppercase;
+
+    cursor: pointer;
+  }
+
+  & .cef_input {
+    flex-grow: 1;
+  }
+
+  & .cef_icon {
+    position: absolute;
+
+    &.__email {
+      top: 35%;
+      right: 15px;
+    }
+
+    &.__phone {
+      top: 28%;
+      right: 13px;
+    }
+  }
+}

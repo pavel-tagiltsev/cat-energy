@@ -9,7 +9,73 @@ block page-styles
 
 block main
   div(data-barba="container" data-barba-namespace!=`${page}`).container
-    h1= page
+    h1.visually-hidden Страница по выбору программы Cat Energy
+    section.form-page
+      header.fp_header
+        h2.fp_title.title Подбор программы
+        p.fp_lead Заполните анкету, и мы подберем программу питания для вашего кота
+
+      form.ce_form.fp_form(action='https://echo.htmlacademy.ru' method='post')
+        fieldset.cef_group.__pet_info
+          legend.visually-hidden Данные кота
+          ul.cef_list(role='none')
+            li.cef_item.ce_field
+              label.cef_label(for='name') Имя:*
+              input#name.cef_input.input(type='text' name='name' placeholder='Барсик' required='')
+            li.cef_item.ce_field
+              label.cef_label(for='weight') Вес (кг):*
+              input#weight.cef_input.input(type='text' name='weight' placeholder='7' required='')
+            li.cef_item.ce_field
+              label.cef_label(for='age') Возраст (лет):
+              input#age.cef_input.input(type='text' name='age' placeholder='7')
+
+        fieldset.cef_group.__program
+          legend.visually-hidden Тип программы
+          ul.cef_list(role='none')
+            li.cef_item.ce_choice.__radio
+              input#slim.cec_input(type='radio' name='program-type' checked='checked')
+              label.cec_label(for='slim') Похудение
+            li.cef_item.ce_choice.__radio
+              input#gain.cec_input(type='radio' name='program-type')
+              label.cec_label(for='gain') Набор массы
+            li.cef_item.ce_choice.__radio
+              input#advice.cec_input(type='radio' name='program-type')
+              label.cec_label(for='advice') Не знаю (нужен ваш совет)
+
+        fieldset.cef_group.__owner_info
+          legend.cef_title.subtitle Контактные данные (владельца кота)
+          ul.cef_list.clearfix(role='none')
+            li.cef_item.ce_field.__with_icon
+              label.cef_label(for='email') E-mail:*
+              input#email.cef_input.input(type='email' name='email' placeholder='kuklachev@gmail.com' required='required')
+              +svg('icon-mail')(width='20' height='14').cef_icon.__email
+            li.cef_item.ce_field.__with_icon
+              label.cef_label(for='phone') Телефон:*
+              input#phone.cef_input.input(type='tel' name='phone' placeholder='8 (960) 900-60-90' required='required')
+              +svg('icon-phone')(width='20' height='20').cef_icon.__phone
+
+        .cef_group.__comment
+          label.cef_title.subtitle(for='comment') Комментарий
+          textarea#comment.input.__textarea(name='comment' placeholder='Расскажите обо всех повадках кота')
+
+        fieldset.cef_group.__extra
+          legend.cef_title.subtitle Дополнительно
+          ul.cef_list.clearfix(role='none')
+            li.cef_item.ce_choice.__checkbox
+              input#sweetener.cec_input(type='checkbox' name='sweetener' checked='checked')
+              label.cec_label(for='sweetener') Cахарозаменитель
+            li.cef_item.ce_choice.__checkbox
+              input#water.cec_input(type='checkbox' name='water')
+              label.cec_label(for='water') Питьевая вода
+            li.cef_item.ce_choice.__checkbox
+              input#milk.cec_input(type='checkbox' name='milk')
+              label.cec_label(for='milk') Молоко
+            li.cef_item.ce_choice.__checkbox
+              input#vitamins.cec_input(type='checkbox' name='vitamins')
+              label.cec_label(for='vitamins') Витамины
+
+        +button('Отправить заявку')(type='submit').cef_brn
+        small.cef_required * — Обязательные поля
 
 block page-script
   script(src!=`js/${page}.min.js`)
