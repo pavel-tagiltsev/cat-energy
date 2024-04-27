@@ -6,19 +6,23 @@
 }
 
 @mixin container-out-on-mobile {
-  margin: 0 0 - $mobile-paddings;
+  margin-left: -$mobile-paddings;
+  margin-right: -$mobile-paddings;
 }
 
 @mixin container-out-on-tablet {
-  margin: 0 0 - $tablet-paddings;
+  margin-left: -$tablet-paddings;
+  margin-right: -$tablet-paddings;
 }
 
 @mixin container-out-on-desktop {
-  margin: 0 0 - $desktop-paddings;
+  margin-left: -$desktop-paddings;
+  margin-right: -$desktop-paddings;
 }
 
 @mixin container-in {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @mixin visually-hidden() {

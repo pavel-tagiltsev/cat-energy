@@ -1,29 +1,23 @@
 extends ../layouts/layout
 
-mixin product-card
-  li.product-card&attributes(attributes)
-    .product-card__wrapper.container
-      +img(images.products.chickenBig)(
+mixin product-card(img)
+  acticle.product&attributes(attributes)
+    .p_inner
+      +img(img)(
         width='140'
         height='112'
-        alt='Изображение продукта'
-      ).product-card__img
-      .product-card__description
-        h3.product-card__title
-          | Cat Energy
-          br
-          | pro 1000 г
-        dl.product-card__desc-list
-          .product-card__desc-inner
-            dt.product-card__desc-term Масса
-            dd.product-card__desc-definition 1000 г
-          .product-card__desc-inner
-            dt.product-card__desc-term Вкус
-            dd.product-card__desc-definition Курица
-          .product-card__desc-inner
-            dt.product-card__desc-term Цена
-            dd.product-card__desc-definition 1000 Р.
-      a.product-card__link.button(href='form.html') Заказать
+        alt='Cat Energy pro 1000 г'
+      ).p_img
+      .p_info
+        h3.p_title Cat Energy pro 1000 г
+        dl.p_list
+          dt.p_term Масса
+          dd.p_def 1000 г
+          dt.p_term Вкус
+          dd.p_def Курица
+          dt.p_term Цена
+          dd.p_def 1000 Р.
+      +button('Заказать', 'link')(href='form.html').p_btn
 
 block append variables
   - const meta = pages.catalog.meta
@@ -34,12 +28,22 @@ block page-styles
 
 block main
   div(data-barba="container" data-barba-namespace!=`${page}`).container
-    h1= page
-    ul
-      +product-card
-      +product-card
-      +product-card
-      +product-card
+    h1.ce_title Каталог продукции
+    ul.product_list.list_style_reset
+      li.pl_item
+        +product-card(images.products.chickenSmall)
+      li.pl_item
+        +product-card(images.products.chickenBig)
+      li.pl_item
+        +product-card(images.products.fishSmall)
+      li.pl_item
+        +product-card(images.products.fishBig)
+      li.pl_item
+        +product-card(images.products.buckwheatSmall)
+      li.pl_item
+        +product-card(images.products.buckwheatBig)
+      li.pl_item
+        +product-card(images.products.riceSmall)
 
 block page-script
   script(src!=`js/${page}.min.js`)
