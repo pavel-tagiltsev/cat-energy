@@ -68,4 +68,5 @@ mixin img(img)
         srcset=getString('tablet') + (image.tablet.retina ? getRetinaString('tablet') : ''))
     if image.mobile
       img.img(
-        src=getString('mobile') srcset=(image.mobile.retina ? getRetinaString('mobile', null, true) : ''))&attributes(attributes)
+        src=getString('mobile') srcset=(image.mobile.retina ? getRetinaString('mobile', null, true) : '')
+      )&attributes(attributes)

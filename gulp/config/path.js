@@ -19,9 +19,9 @@ export default {
   source: {
     pug: `${sourceFolder}/pug/pages/*.pug`,
     scss: {
-      base: `${sourceFolder}/sass/entry/base.scss`,
-      layouts: `${sourceFolder}/sass/entry/layout.scss`,
-      pages: `${sourceFolder}/sass/entry/pages/*.scss`
+      base: `${sourceFolder}/sass/base/base.scss`,
+      layouts: `${sourceFolder}/sass/layouts/layout.scss`,
+      pages: `${sourceFolder}/sass/pages/*.scss`
     },
     js: {
       'index': `${sourceFolder}/js/pages/Index.js`,
