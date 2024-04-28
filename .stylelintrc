@@ -28,6 +28,12 @@
     "function-whitespace-after": "always",
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
+    "length-zero-no-unit": [
+      true,
+      {
+        "ignore": ["custom-properties"]
+      }
+    ],
     "string-quotes": "single",
     "unit-case": "lower",
     "value-keyword-case": "lower",
@@ -81,7 +87,8 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": ["first-nested"]
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
       }
     ],
     "media-feature-colon-space-after": "always",
@@ -98,7 +105,8 @@
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": ["first-nested", "blockless-after-blockless"]
+        "except": ["first-nested", "blockless-after-blockless"],
+        "ignore": ["after-comment"]
       }
     ],
     "at-rule-name-case": "lower",
