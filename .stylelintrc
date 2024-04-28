@@ -1,9 +1,9 @@
 {
   "extends": [
     "stylelint-config-recommended-scss",
-    "stylelint-config-rational-order"
+    "stylelint-config-rational-order-fix"
   ],
-  "plugins": ["stylelint-order", "stylelint-config-rational-order/plugin"],
+  "plugins": ["stylelint-order", "stylelint-config-rational-order-fix/plugin"],
   "rules": {
     "plugin/rational-order": [
       true,
@@ -28,12 +28,6 @@
     "function-whitespace-after": "always",
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
-    "length-zero-no-unit": [
-      true,
-      {
-        "ignore": ["custom-properties"]
-      }
-    ],
     "string-quotes": "single",
     "unit-case": "lower",
     "value-keyword-case": "lower",
@@ -87,8 +81,7 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": ["first-nested"],
-        "ignore": ["after-comment"]
+        "except": ["first-nested"]
       }
     ],
     "media-feature-colon-space-after": "always",
@@ -105,8 +98,7 @@
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": ["first-nested", "blockless-after-blockless"],
-        "ignore": ["after-comment"]
+        "except": ["first-nested", "blockless-after-blockless"]
       }
     ],
     "at-rule-name-case": "lower",
