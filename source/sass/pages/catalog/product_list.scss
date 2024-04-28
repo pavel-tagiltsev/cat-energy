@@ -1,28 +1,31 @@
 .product_list {
+  --productList-item-borderColor: #ebebeb;
+
   display: grid;
   grid-template-columns: 1fr;
+  gap: 20px;
   justify-items: center;
+  padding-bottom: 20px;
 
   @include container-out-on-mobile;
 
-  & .pl_item {
+  &__item {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 0 0 20px;
-    border-top: 1px solid #ebebeb;
+    border-top: 1px solid var(--productList-item-borderColor);
   }
 }
 
 @include media('>=tablet') {
   .product_list {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+    row-gap: 40px;
 
     @include container-in;
 
-    & .pl_item {
-      margin-bottom: 0;
+    &__item {
       border-top: none;
     }
   }
@@ -30,14 +33,7 @@
 
 @include media('>=desktop') {
   .product_list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 60px;
-
-    @include container-in;
-
-    & .pl_item {
-      margin-bottom: 0;
-      border-top: none;
-    }
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
   }
 }

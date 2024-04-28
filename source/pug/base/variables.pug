@@ -66,21 +66,6 @@
       }
     },
     products: {
-      chickenBig: {
-        dir: 'products',
-        mobile: {
-          file: 'chicken-big.jpg',
-          retina: true,
-        },
-        tablet: {
-          file: 'chicken-big.png',
-          retina: true,
-        },
-        desktop: {
-          file: 'chicken-big.png',
-          retina: true,
-        }
-      },
       chickenSmall: {
         dir: 'products',
         mobile: {
@@ -96,18 +81,18 @@
           retina: true,
         }
       },
-      fishBig: {
+      chickenBig: {
         dir: 'products',
         mobile: {
-          file: 'fish-big.jpg',
+          file: 'chicken-big.jpg',
           retina: true,
         },
         tablet: {
-          file: 'fish-big.png',
+          file: 'chicken-big.png',
           retina: true,
         },
         desktop: {
-          file: 'fish-big.png',
+          file: 'chicken-big.png',
           retina: true,
         }
       },
@@ -126,18 +111,18 @@
           retina: true,
         }
       },
-      buckwheatBig: {
+      fishBig: {
         dir: 'products',
         mobile: {
-          file: 'buckwheat-big.jpg',
+          file: 'fish-big.jpg',
           retina: true,
         },
         tablet: {
-          file: 'buckwheat-big.png',
+          file: 'fish-big.png',
           retina: true,
         },
         desktop: {
-          file: 'buckwheat-big.png',
+          file: 'fish-big.png',
           retina: true,
         }
       },
@@ -153,6 +138,21 @@
         },
         desktop: {
           file: 'buckwheat-small.png',
+          retina: true,
+        }
+      },
+      buckwheatBig: {
+        dir: 'products',
+        mobile: {
+          file: 'buckwheat-big.jpg',
+          retina: true,
+        },
+        tablet: {
+          file: 'buckwheat-big.png',
+          retina: true,
+        },
+        desktop: {
+          file: 'buckwheat-big.png',
           retina: true,
         }
       },
@@ -173,4 +173,70 @@
       },
     }
   }
+
+  const products = [
+    {
+      name: 'Cat Energy PRO 500 г',
+      img: images.products.chickenSmall,
+      info: {
+        weight: 500,
+        taste: 'Курица',
+        price: 700,
+      }
+    },
+    {
+      name: 'Cat Energy PRO 1000 г',
+      img: images.products.chickenBig,
+      info: {
+        weight: 1000,
+        taste: 'Курица',
+        price: 1000,
+      }
+    },
+    {
+      name: 'Cat Energy PRO 500 г',
+      img: images.products.fishSmall,
+      info: {
+        weight: 500,
+        taste: 'Рыба',
+        price: 700,
+      }
+    },
+    {
+      name: 'Cat Energy PRO 1000 г',
+      img: images.products.fishBig,
+      info: {
+        weight: 1000,
+        taste: 'Рыба',
+        price: 1000,
+      }
+    },
+    {
+      name: 'Cat Energy SLIM 500 г',
+      img: images.products.buckwheatSmall,
+      info: {
+        weight: 500,
+        taste: 'Гречка',
+        price: 400,
+      }
+    },
+    {
+      name: 'Cat Energy SLIM 1000 г',
+      img: images.products.buckwheatBig,
+      info: {
+        weight: 1000,
+        taste: 'Гречка',
+        price: 700,
+      }
+    },
+    {
+      name: 'Cat Energy SLIM 500 г',
+      img: images.products.riceSmall,
+      info: {
+        weight: 500,
+        taste: 'Рис',
+        price: 500,
+      }
+    },
+  ]
 
