@@ -1,0 +1,25 @@
+.form-page {
+  padding-top: 27px;
+  padding-bottom: 30px;
+
+  overflow-x: hidden;
+
+  & .fp_header {
+    margin-bottom: 39px;
+  }
+
+  & .fp_title {
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+
+  & .fp_lead {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 30px;
+    font-size: 14px;
+    font-family: $font-family-secondary;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+}

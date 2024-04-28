@@ -1,0 +1,50 @@
+extends ../layouts/layout
+
+block append variables
+  -
+    const page = 'catalog';
+    const meta = {
+      title: 'Cat Energy',
+      description: 'Корм для домашних кошек',
+      preview: '@img/meta-preview.jpg',
+    };
+
+block page-styles
+  link(href=`css/${page}.css` rel='stylesheet')
+
+block main
+  div(data-barba="container" data-barba-namespace=page).container
+    h1.ce_title Каталог продукции
+    ul.product_list.list_style_reset
+      each product in products
+        li.product_list__item
+          acticle.product
+            .product__inner
+              +img(product.img)(
+                width='140'
+                height='144'
+                alt=product.name
+              ).product__img
+              .product__info
+                h3.product__title=product.name
+                dl.product__list
+                  dt.product__term Масса
+                  dd.product__def=product.info.weight + ' г'
+                  dt.product__term Вкус
+                  dd.product__def=product.info.taste
+                  dt.product__term Цена
+                  dd.product__def=product.info.price + ' Р.'
+              +button('Заказать', 'link')(href='form.html').product__btn
+
+      li.product_list__item
+        div.product.product--more
+          .product__inner
+            .product__icon-wrp
+              +svg('icon-plus').product__icon
+            .product__info
+              h3.product__title Показать еще 100500 товаров
+              p.product__desc На самом деле вкусов гораздо больше!
+            +button('Показать все').product__btn
+
+block page-script
+  script(src=`js/${page}.min.js`)

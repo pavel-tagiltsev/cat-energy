@@ -1,0 +1,22 @@
+pages:
+  index:
+    page: index
+    url: index.html
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: @img/meta-preview.jpg
+  catalog:
+    page: catalog
+    url: catalog.html
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: @img/meta-preview.jpg
+  form:
+    page: form
+    url: form.html
+    meta:
+      title: Cat Energy
+      description: Корм для домашних кошек
+      preview: @img/meta-preview.jpg

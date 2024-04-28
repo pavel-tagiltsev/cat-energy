@@ -1,0 +1,43 @@
+@import 'components/copyright';
+@import 'components/social';
+
+.page-footer {
+  padding-top: 39px;
+  background-color: $basic_grey;
+}
+
+.page-footer__logo {
+  display: block;
+  width: 128px;
+  height: 24px;
+  margin-right: auto;
+  margin-bottom: 31px;
+  margin-left: auto;
+}
+
+@include media('>=tablet') {
+  .page-footer {
+    padding-top: 54px;
+    padding-bottom: 58px;
+    background-color: $basic_grey;
+  }
+
+  .page-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-footer__logo {
+    margin: 0;
+    margin-right: 32px;
+  }
+}
+
+
+@include media('>=desktop') {
+  .page-footer {
+    padding-top: 58px;
+  }
+}
+

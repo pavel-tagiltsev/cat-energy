@@ -1,9 +1,9 @@
 export default function server() {
   app.plugins.browserSync.init({
     server: {
-      baseDir: app.path.build.html
+      baseDir: app.path.build.html,
     },
     notify: false,
-    port: 3000
+    port: 8080
   })
 }

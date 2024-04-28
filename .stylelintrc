@@ -1,15 +1,15 @@
 {
   "extends": [
     "stylelint-config-recommended-scss",
-    "stylelint-config-rational-order"
+    "stylelint-config-rational-order-fix"
   ],
-  "plugins": ["stylelint-order", "stylelint-config-rational-order/plugin"],
+  "plugins": ["stylelint-order", "stylelint-config-rational-order-fix/plugin"],
   "rules": {
     "plugin/rational-order": [
       true,
       {
         "border-in-box-model": false,
-        "empty-line-between-groups": true
+        "empty-line-between-groups": false
       }
     ],
     "font-family-no-missing-generic-family-keyword": true,
@@ -134,7 +134,7 @@
     "at-rule-semicolon-newline-after": "always",
     "indentation": 2,
     "max-nesting-depth": [
-      2,
+      3,
       {
         "ignoreAtRules": ["media"]
       }

@@ -1,46 +1,72 @@
+import gulp from 'gulp';
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
-
 import csso from 'postcss-csso'
 import postcss from 'gulp-postcss'
 import autoprefixer from 'autoprefixer'
-import sourcemaps from 'gulp-sourcemaps'
 import groupCssMediaQueries from 'gulp-group-css-media-queries'
+import sourcemaps from "gulp-sourcemaps";
+import rev from 'gulp-rev';
+import {readFileSync} from "node:fs";
+import revRewrite from "gulp-rev-rewrite";
 
 const sass = gulpSass(dartSass)
+const {src, dest} = gulp;
 
-export default function scss() {
-  const {isDev, isBuild} = app
-  const {src, dest} = app.gulp
-  const {build, source} = app.path
-  const {rename, replace, gulpIf, browserSync} = app.plugins
+const includeExtra = [
+  './node_modules/normalize.css/',
+  './node_modules/include-media/dist/',
+  './node_modules/starability/starability-scss/',
+  './node_modules/starability/starability-scss/starability/',
+  './node_modules/nouislider/dist/'
+]
 
-  return src(Object.values(source.scss))
-    .pipe(app.errorHandler('SCSS'))
-    .pipe(gulpIf(isDev, sourcemaps.init()))
-    .pipe(replace(/@img\//g, '../images'))
-    .pipe(
-      sass({
-        includePaths: [
-          './node_modules/normalize.css/',
-          './node_modules/include-media/dist/',
-          './node_modules/starability/starability-scss/',
-          './node_modules/starability/starability-scss/starability/',
-          './node_modules/nouislider/dist/'
-        ],
-        outputStyle: 'expanded'
-      })
-    )
-    .pipe(
-      rename((path) => {
-        path.dirname = ''
-      })
-    )
-    .pipe(gulpIf(isBuild, groupCssMediaQueries()))
-    .pipe(gulpIf(isBuild, postcss([autoprefixer()])))
-    .pipe(gulpIf(isBuild, dest(build.css)))
+const strategy = {};
+
+strategy.dev = function scss() {
+  return src(Object.values(app.path.source.scss))
+    .pipe(app.errorHandler('scss:dev'))
+    .pipe(sourcemaps.init())
+    .pipe(app.plugins.replace(/@img\//g, '../img'))
+    .pipe(sass({
+      includePaths: includeExtra,
+      outputStyle: 'expanded'
+    }))
+    .pipe(app.plugins.rename((path) => {
+      path.dirname = ''
+    }))
     .pipe(postcss([csso()]))
-    .pipe(gulpIf(isDev, sourcemaps.write('.')))
-    .pipe(dest(build.css))
-    .pipe(browserSync.stream())
-}
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(app.path.build.css))
+    .pipe(app.plugins.browserSync.stream())
+};
+
+strategy.prod = function scss() {
+  const manifest = readFileSync(app.path.build.manifest);
+
+  return src(Object.values(app.path.source.scss))
+    .pipe(app.errorHandler('scss:prod'))
+    .pipe(app.plugins.replace(/@img\//g, '../img'))
+    .pipe(sass({
+      includePaths: includeExtra,
+      outputStyle: 'expanded'
+    }))
+    .pipe(app.plugins.rename((path) => {
+      path.dirname = ''
+    }))
+    .pipe(groupCssMediaQueries())
+    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([csso()]))
+    .pipe(revRewrite({ manifest }))
+    .pipe(rev())
+    .pipe(dest(app.path.build.css))
+    .pipe(rev.manifest({
+      base: app.path.buildFolder,
+      path: app.path.build.manifest,
+      merge: true
+    }))
+    .pipe(dest(app.path.build.html))
+};
+
+strategy.default = strategy.dev;
+export default strategy[process.env.MODE] || strategy.default;

@@ -1,0 +1,77 @@
+extends ../base/base
+
+block layout-styles
+  link(href='css/layout.css' rel='stylesheet')
+  block page-styles
+
+append scripts
+  script(src='https://api-maps.yandex.ru/2.1/?apikey=ffb78397-bae9-487a-980a-d69790fc2835&lang=ru_RU')
+  script(src='js/layout.min.js' defer)
+
+block layout
+  .layout
+    header(class!=`page-header page-header--${page}`).layout__header
+      .page-header__inner.container
+        +logo.page-header__logo
+        nav.page-header__navigation
+          button(
+            type='button'
+            aria-label='Открыть меню'
+          ).menu-button.menu-button--closed.page-header__menu-toggler
+          ul.navigation.page-header__links
+            li.navigation__item
+              a(class!=`navigation__link navigation__link--${page} ${page === 'index' ? 'navigation__link--active' : ''}` href!= page === 'index' ? '#' : pages.index.url) Главная
+            li.navigation__item
+              a(class!=`navigation__link navigation__link--${page} ${page === 'catalog' ? 'navigation__link--active' : ''}` href!= page === 'catalog' ? '#' : pages.catalog.url) Каталог продукции
+            li.navigation__item
+              a(class!=`navigation__link navigation__link--${page} ${page === 'form' ? 'navigation__link--active' : ''}` href!= page === 'form' ? '#' : pages.form.url) Подбор программы
+
+      if page === 'index'
+        section.promo.container
+          +title('Функциональное питание для котов', 'h1').promo__title
+          p.promo__lead Занялся собой? Займись котом!
+          +img(images.promo)(width="280" height="271" alt='Банка корма Cat Energy Pro').promo__img
+          +button('Подобрать программу', 'link')(href='form.html').promo__button
+
+    main.layout__main(aria-label='Основной контент страницы')
+      block main
+
+      section.contacts&attributes(attributes)
+        h2.visually-hidden Контакты
+        header.contacts__header.container
+          .contacts__card
+            b.contacts__title
+              | Приглашаем
+              br
+              | к сотрудничеству дилеров!
+            p.contacts__adress
+              | ул. Большая Конюшенная, д. 19/8
+              span= ' Санкт-Петербург'
+        .contacts__map
+          .map&attributes(attributes)
+            #map.map__ymaps
+            +img(images.map)(
+              width='320'
+              height='362'
+              alt='Адрес компании на карте: Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург'
+            ).map__image
+
+    footer.page-footer.layout__footer
+      .container.page-footer__inner
+        +logo('footer').page-footer__logo
+        ul.social.page-footer__social
+          li.social__item
+            a.social__link.social__link--vk(href='#')
+              span.visually-hidden ВКонтакте
+              +svg('logo-vk').social__icon
+          li.social__item
+            a.social__link.social__link--instagram(href='#')
+              span.visually-hidden Instagram
+              +svg('logo-instagram').social__icon
+          li.social__item
+            a.social__link.social__link--facebook(href='#')
+              span.visually-hidden Facebook
+              +svg('logo-facebook').social__icon
+        a.copyright(href='https://htmlacademy.ru/' target='_blank').footer__copyright
+          span.copyright__company HTML Academy
+          +svg('logo-html-academy').copyright__logo

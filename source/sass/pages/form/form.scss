@@ -1,0 +1,46 @@
+.ce_form {
+  & .cef_group {
+    margin: 0 0 28px;
+    padding: 0;
+    border: none;
+
+    &.__program {
+      padding: 15px 0;
+      border-top: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+
+  & .cef_title {
+    display: inline-block;
+    float: left;
+    max-width: 201px;
+    margin-bottom: 32px;
+  }
+
+  & .cef_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  & .cef_item {
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & .cef_btn {
+    margin-bottom: 21px;
+  }
+
+  & .cef_required {
+    display: block;
+    color: $basic_black;
+
+    font-size: 14px;
+    text-align: center;
+  }
+}

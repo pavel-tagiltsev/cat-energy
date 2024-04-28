@@ -1,0 +1,72 @@
+.ce_choice {
+  &.__radio {
+    & .cec_input {
+      &:checked ~ .cec_label::before {
+        background-color: $basic_green;
+        background-clip: content-box;
+      }
+    }
+
+    & .cec_label {
+      &::before {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &.__checkbox {
+    & .cec_input {
+      &:checked ~ .cec_label::after {
+        position: absolute;
+        top: 11px;
+        left: 6px;
+        width: 18px;
+        height: 14px;
+        content: url('../img/icon-tick.svg');
+      }
+    }
+  }
+
+  & .cec_input {
+    @include visually-hidden;
+
+    &:focus ~ .cec_label::before {
+      border-color: #bababa;
+    }
+
+    &:focus ~ .cec_label {
+      outline: 2px dashed $special_dark-grey;
+    }
+
+    &:not(:disabled) ~ .cec_label:hover::before {
+      border-color: #bababa;
+    }
+
+    &:disabled ~ .cec_label {
+      cursor: default;
+      opacity: 0.3;
+    }
+  }
+
+  & .cec_label {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 12px 10px 12px 45px;
+    font-size: 16px;
+    font-family: $special_font;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      padding: 7px;
+      border: 1px solid $special_grey;
+      content: '';
+    }
+  }
+}

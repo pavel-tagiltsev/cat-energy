@@ -1,0 +1,23 @@
+.subtitle {
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+  color: $basic_black;
+
+  font-weight: 400;
+  font-size: 24px;
+  font-family: $font-family-secondary;
+  line-height: 1.1;
+  background-color: $basic_white;
+
+  &::after {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 2px;
+    background-color: $basic_green;
+    content: '';
+  }
+}

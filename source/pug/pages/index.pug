@@ -1,0 +1,83 @@
+extends ../layouts/layout
+
+block append variables
+  - const meta = pages.index.meta
+  - const {page} = pages.index
+
+block page-styles
+  link(href!=`css/${page}.css` rel='stylesheet')
+
+block main
+  div(data-barba="container" data-barba-namespace!=`${page}`)
+    section.programms.container
+      h2.visually-hidden Программы питания
+      ul.programms__list
+        li.programms__item.programms__item--slim
+          h3.programms__title.programms__title--slim Похудение
+          p.programms__text
+            | Ваш кот весит больше собаки и почти утратил способность лазить по
+            | деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу
+            | сбросить лишний вес.
+          a.programms__link(href='catalog.html') Каталог slim
+        li.programms__item.programms__item--gain
+          h3.programms__title.programms__title--gain Набор массы
+          p.programms__text
+            | Заработать авторитет среди дворовых котов и даже собак? Серия Cat
+            | Energy Pro поможет вашему коту нарастить необходимые мышцы!
+          a.programms__link(href='catalog.html') Каталог pro
+
+    section.info.container
+      +title('Как это работает', 'h2').info__title
+      ul.info__list
+        li.info__item.info__item--leaf
+          | Функциональное питание содержит только полезные питательные вещества.
+        li.info__item.info__item--powder
+          | Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
+        li.info__item.info__item--dining
+          | Замените один-два приема обычной еды на наше функциональное питание.
+        li.info__item.info__item--clock
+          | Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
+
+    section.example
+      .example__inner.container
+        .example__content-wrapper
+          +title('Живой пример', 'h2').example__title
+          p.example__text
+            | Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
+            | Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
+            | этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+          .weight-loss.example__weight-loss
+            .weight-loss__item.weight-loss__item--first
+              .weight-loss__details.weight-loss__details--box
+                p.weight-loss__term 5 кг
+                p.weight-loss__description Снижение веса
+              .weight-loss__details.weight-loss__details--box
+                p.weight-loss__term 60 дней
+                p.weight-loss__description Затрачено времени
+            .weight-loss__item.weight-loss__item--second
+              .weight-loss__details.weight-loss__details--no-box
+                p.weight-loss__term 15 000 руб.
+                p.weight-loss__description Затраты на питание:
+        .example__comparison-wrapper
+          ul.comparison.example__comparison
+            li.comparison__item.comparison__item--before
+              +img(images.slider.before)(
+                width=320
+                height=240
+                alt='Изображение кота до похудения'
+              ).comparison__image
+            li.comparison__item.comparison__item--after
+              +img(images.slider.after)(
+                width=320
+                height=240
+                alt='Изображение кота после похудения'
+              ).comparison__image
+          .slider.example__slider
+            button.slider__toggle.slider__toggle--before(type='button')
+              span.slider__underlining Было
+            #slider.slider__range
+            button.slider__toggle.slider__toggle--after(type='button')
+              span.slider__underlining Стало
+
+block page-script
+  script(src!=`js/${page}.min.js`)

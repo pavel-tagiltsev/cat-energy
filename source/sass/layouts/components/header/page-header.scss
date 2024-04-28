@@ -1,0 +1,70 @@
+@import 'components/menu-button';
+@import 'components/navigation';
+@import 'components/promo';
+
+.page-header {
+  padding-top: 11px;
+}
+
+.page-header__logo {
+  margin-bottom: 12px;
+}
+
+.page-header__navigation {
+  position: relative;
+
+  @include container-out-on-mobile;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.page-header__menu-toggler {
+  position: absolute;
+  top: -53px;
+  right: 12px;
+}
+
+@include media('>=tablet') {
+  .page-header {
+    padding-top: 25px;
+  }
+
+  .page-header__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-header__navigation {
+    @include container-in;
+  }
+
+  .page-header__menu-toggler {
+    display: none;
+  }
+}
+
+@include media('>=desktop') {
+  .page-header {
+    padding-top: 54px;
+
+    &--index {
+      background-color: $basic_green-3;
+      background-image:
+        linear-gradient(to right, $basic_white 50%, transparent 50%),
+        url('../images/promo/desktop/1x/bg.jpg');
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+  }
+}
+
+@include media('>=desktop', 'retina2x') {
+  .page-header--index {
+    background-image:
+      linear-gradient(to right, $basic_white 50%, transparent 50%),
+      url('../images/promo/desktop/2x/bg.jpg');
+    background-size: auto, 718px;
+  }
+}

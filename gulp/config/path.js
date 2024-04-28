@@ -13,42 +13,51 @@ export default {
     images: `${buildFolder}/images/`,
     files: `${buildFolder}/files/`,
     fonts: `${buildFolder}/fonts/`,
-    favicons: `${buildFolder}/`
+    favicons: `${buildFolder}/favicons/`,
+    manifest: `${buildFolder}/rev-manifest.json`
   },
   source: {
-    pug: `${sourceFolder}/pages/*/*.pug`,
+    pug: `${sourceFolder}/pug/pages/*.pug`,
     scss: {
-      base: `${sourceFolder}/base/*.scss`,
-      layouts: `${sourceFolder}/layout/*.scss`,
-      pages: `${sourceFolder}/pages/*/*.scss`
+      base: `${sourceFolder}/sass/base/base.scss`,
+      layouts: `${sourceFolder}/sass/layouts/layout.scss`,
+      pages: `${sourceFolder}/sass/pages/*.scss`
     },
     js: {
-      'base-header': `${sourceFolder}/base/head.js`,
-      'base-body': `${sourceFolder}/base/body.js`,
-      'layout-head': `${sourceFolder}/layout/head.js`,
-      'layout-body': `${sourceFolder}/layout/body.js`,
-      'index-page-head': `${sourceFolder}/pages/index/head.js`,
-      'index-page-body': `${sourceFolder}/pages/index/body.js`,
-      'form-page-head': `${sourceFolder}/pages/form/head.js`,
-      'form-page-body': `${sourceFolder}/pages/form/body.js`
+      'index': `${sourceFolder}/js/pages/Index.js`,
+      'catalog': `${sourceFolder}/js/pages/Catalog.js`,
+      'form': `${sourceFolder}/js/pages/Form.js`,
+      'layout': `${sourceFolder}/js/layout/Layout.js`,
+      'transition': `${sourceFolder}/js/pages/transition/Transition.js`,
     },
-    images: `${sourceFolder}/assets/images/**/*.{jpg,jpeg,png,gif,webp}`,
+    img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    images: {
+      jpg: `${sourceFolder}/assets/images/**/*.jpg`,
+      png: `${sourceFolder}/assets/images/**/*.png`,
+      webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+      avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    },
     svg: `${sourceFolder}/assets/images/**/*.svg`,
     files: `${sourceFolder}/assets/files/**/*.*`,
     fonts: `${sourceFolder}/assets/fonts/`,
-    fontStyle: `${sourceFolder}/base/styles/fonts.scss`,
-    sprite: {
-      stack: `${sourceFolder}/assets/sprites/svg/stack/**/*.svg`,
-      symbol: `${sourceFolder}/assets/sprites/svg/symbol/**/*.svg`
-    },
+    fontStyle: `${sourceFolder}/sass/base/fonts.scss`,
+    sprite: `${sourceFolder}/assets/sprite/**/*.svg`,
     favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },
   watch: {
     pug: `${sourceFolder}/**/*.pug`,
     scss: `${sourceFolder}/**/*.scss`,
     js: `${sourceFolder}/**/*.js`,
-    images: `${sourceFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
-    files: `${sourceFolder}/assets/files/**/*.*`
+    img:`${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    images: {
+      jpg: `${sourceFolder}/assets/images/**/*.jpg`,
+      png: `${sourceFolder}/assets/images/**/*.png`,
+      webp: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+      avif: `${sourceFolder}/assets/images/**/*.{jpg,png}`,
+    },
+    sprite: `${sourceFolder}/assets/sprite/**/*.svg`,
+    files: `${sourceFolder}/assets/files/**/*.*`,
+    favicons: `${sourceFolder}/assets/favicons/*.{png,xml,ico,svg,webmanifest}`
   },
   buildFolder,
   sourceFolder,

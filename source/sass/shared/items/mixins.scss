@@ -1,0 +1,38 @@
+@mixin list-style-none {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin container-out-on-mobile {
+  margin-right: -$mobile-paddings;
+  margin-left: -$mobile-paddings;
+}
+
+@mixin container-out-on-tablet {
+  margin-right: -$tablet-paddings;
+  margin-left: -$tablet-paddings;
+}
+
+@mixin container-out-on-desktop {
+  margin-right: -$desktop-paddings;
+  margin-left: -$desktop-paddings;
+}
+
+@mixin container-in {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
