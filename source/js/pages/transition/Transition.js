@@ -27,6 +27,7 @@ class Transition {
   leave = () => this.animateLeave();
 
   afterEnter = ({current, next}) => {
+    scrollTo(0, 0);
     this.currentPage = current;
     this.currentPageDocument = this.stringToHtml(current.html);
     this.nextPage = next;
