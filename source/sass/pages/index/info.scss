@@ -15,10 +15,8 @@
 
 .info__item {
   position: relative;
-
   margin-bottom: 26px;
   padding-left: 80px;
-
   line-height: 18px;
 
   &:last-child {
@@ -29,10 +27,8 @@
     position: absolute;
     top: -3px;
     left: 0;
-
     width: 60px;
     height: 60px;
-
     content: '';
   }
 
@@ -68,7 +64,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-
     column-gap: 60px;
     row-gap: 87px;
   }
@@ -79,7 +74,6 @@
     padding-right: 30%;
     padding-bottom: 50px;
     padding-left: 0;
-
     font-size: 16px;
     line-height: 24px;
 
@@ -93,7 +87,6 @@
       right: 78px;
       bottom: -7px;
       z-index: -1;
-
       color: $basic_grey;
       font-size: 280px;
       font-family: $font-secondary;
@@ -102,7 +95,6 @@
 
     &--leaf::after {
       right: 94px;
-
       content: '1';
     }
 
@@ -128,7 +120,6 @@
 
   .info__list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
     column-gap: 80px;
   }
 

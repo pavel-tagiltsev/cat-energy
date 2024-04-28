@@ -3,9 +3,7 @@
 
   &--show-more {
     position: relative;
-
     padding-top: 59px;
-
     text-align: center;
 
     &::before,
@@ -13,12 +11,9 @@
       position: absolute;
       top: 26px;
       left: 49.6%;
-
       width: 2px;
       height: 30px;
-
       background-color: $special_grey-4;
-
       content: '';
     }
 
@@ -42,7 +37,6 @@
 
   &--additional-goods .product-card__text {
     margin-bottom: 14px;
-
     font-size: 14px;
   }
 
@@ -60,7 +54,6 @@
   margin: 0;
   margin-bottom: 14px;
   padding-top: 21px;
-
   color: $special_dark-grey-2;
 
   font-weight: 400;
@@ -73,7 +66,6 @@
 .product-card__text {
   margin: 0;
   margin-bottom: 22px;
-
   color: $special_dark-grey;
 
   font-size: 12px;
@@ -86,7 +78,6 @@
 
 .product-card__desc-list {
   margin: 0;
-
   color: $special_dark-grey;
 
   font-size: 12px;
@@ -111,7 +102,6 @@
   margin-bottom: 24px;
   padding-top: 12px;
   padding-bottom: 10px;
-
   font-size: 16px;
   // font-family: 'Oswald';
   text-align: center;

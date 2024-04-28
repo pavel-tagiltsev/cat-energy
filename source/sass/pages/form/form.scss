@@ -13,9 +13,9 @@
 
   & .cef_title {
     display: inline-block;
+    float: left;
     max-width: 201px;
     margin-bottom: 32px;
-    float: left;
   }
 
   & .cef_list {
@@ -38,9 +38,9 @@
 
   & .cef_required {
     display: block;
-    text-align: center;
+    color: $basic_black;
 
     font-size: 14px;
-    color: $basic_black;
+    text-align: center;
   }
 }

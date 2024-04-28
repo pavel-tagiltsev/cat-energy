@@ -1,11 +1,9 @@
 .promo {
   min-height: 480px;
   padding-top: 26px;
-
   color: $basic_white;
   font-family: $font-secondary;
   text-align: center;
-
   background-color: $basic_green-3;
   background-image:
     linear-gradient(to top, $basic_white 175px, transparent 175px),
@@ -30,7 +28,6 @@
 .promo__lead {
   margin: 0;
   margin-bottom: 28px;
-
   line-height: 14px;
   text-transform: uppercase;
 }
@@ -47,13 +44,10 @@
 @include media('>=tablet') {
   .promo {
     position: relative;
-
     padding-top: 48px;
     padding-bottom: 508px;
-
     color: $basic_black;
     text-align: left;
-
     background: none;
   }
 
@@ -67,7 +61,6 @@
   .promo__lead {
     margin-bottom: 49px;
     margin-left: 88px;
-
     font-size: 20px;
     line-height: 20px;
   }
@@ -76,7 +69,6 @@
     position: absolute;
     top: 249px;
     z-index: -1;
-
     width: 709px;
     height: 609px;
   }
@@ -107,7 +99,6 @@
     top: 10px;
     left: 38.75%;
     z-index: 0;
-
     width: 552px;
     height: 499px;
   }

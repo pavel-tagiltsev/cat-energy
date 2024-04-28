@@ -8,7 +8,7 @@
     }
 
     & .cec_label {
-      &:before {
+      &::before {
         border-radius: 50%;
       }
     }
@@ -17,13 +17,12 @@
   &.__checkbox {
     & .cec_input {
       &:checked ~ .cec_label::after {
-        content: url("../img/icon-tick.svg");
         position: absolute;
-        left: 6px;
         top: 11px;
-
+        left: 6px;
         width: 18px;
         height: 14px;
+        content: url('../img/icon-tick.svg');
       }
     }
   }
@@ -44,8 +43,8 @@
     }
 
     &:disabled ~ .cec_label {
-      opacity: 0.3;
       cursor: default;
+      opacity: 0.3;
     }
   }
 
@@ -54,24 +53,20 @@
     display: inline-block;
     margin: 0;
     padding: 12px 10px 12px 45px;
-
     font-size: 16px;
     font-family: $special_font;
     text-transform: uppercase;
-
     cursor: pointer;
 
     &::before {
-      content: "";
       position: absolute;
       top: 5px;
       left: 0;
-
       width: 30px;
       height: 30px;
       padding: 7px;
-
       border: 1px solid $special_grey;
+      content: '';
     }
   }
 }

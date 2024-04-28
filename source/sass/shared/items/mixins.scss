@@ -1,28 +1,27 @@
 @mixin list-style-none {
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
 @mixin container-out-on-mobile {
-  margin-left: -$mobile-paddings;
   margin-right: -$mobile-paddings;
+  margin-left: -$mobile-paddings;
 }
 
 @mixin container-out-on-tablet {
-  margin-left: -$tablet-paddings;
   margin-right: -$tablet-paddings;
+  margin-left: -$tablet-paddings;
 }
 
 @mixin container-out-on-desktop {
-  margin-left: -$desktop-paddings;
   margin-right: -$desktop-paddings;
+  margin-left: -$desktop-paddings;
 }
 
 @mixin container-in {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 @mixin visually-hidden() {
@@ -30,10 +29,10 @@
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
   overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
 }

@@ -14,19 +14,15 @@
 .weight-loss__details {
   &--box {
     position: relative;
-
     min-width: 124px;
     padding-top: 16px;
     padding-bottom: 17px;
-
     text-align: center;
-
     border: 1px solid $special_grey;
     border-radius: 3px;
 
     & > .weight-loss__term {
       margin: 0;
-
       color: $basic_black;
       font-weight: 400;
       font-size: 24px;
@@ -39,14 +35,11 @@
       bottom: -18px;
       left: 16%;
       z-index: 1;
-
       width: 82px;
       margin: 0;
-
       font-size: 12px;
       line-height: 12px;
       text-transform: lowercase;
-
       background-color: $special_grey-6;
     }
   }
@@ -54,7 +47,6 @@
   &--no-box {
     display: flex;
     justify-content: center;
-
     color: $basic_black;
     font-family: $font_secondary;
     text-transform: uppercase;
@@ -102,19 +94,15 @@
       & > .weight-loss__description {
         bottom: -7px;
         left: 9%;
-
         width: 130px;
-
         font-size: 14px;
         line-height: 14px;
-
         background-color: $basic_white;
       }
     }
 
     &--no-box {
       flex-direction: column;
-
       font-size: 20px;
       line-height: 30px;
       text-align: right;

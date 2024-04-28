@@ -1,7 +1,6 @@
 .comparison {
   @include list-style-none;
   position: relative;
-
   width: 320px;
   margin: 0 auto;
 }
@@ -12,12 +11,9 @@
   &--before {
     position: absolute;
     z-index: 1;
-
     width: 50%;
     overflow: hidden;
-
     background-color: $special_grey-6;
-
     transition: 100ms linear;
   }
 }

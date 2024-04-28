@@ -12,7 +12,7 @@
     "deploy": "gulp deploy",
     "sprite": "gulp sprite",
     "eclint": "eclint check \"**/*.*\"",
-    "stylelint": "stylelint \"source/**/*.scss\"",
+    "stylelint": "stylelint \"source/**/*.scss\" --fix",
     "prettier": "prettier --check \"**/*.*\"",
     "check": "npm run eclint & npm run stylelint & npm run prettier"
   },

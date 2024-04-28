@@ -5,14 +5,12 @@
 .example {
   padding-top: 29px;
   padding-bottom: 38px;
-
   background-color: $special_grey-6;
 }
 
 .example__title {
   margin: 0;
   margin-bottom: 36px;
-
   background-color: transparent;
 }
 
@@ -20,7 +18,6 @@
   margin: 0;
   margin-bottom: 24px;
   padding-right: 14px;
-
   line-height: 18px;
 }
 
@@ -44,7 +41,6 @@
 @include media('>=tablet') {
   .example {
     padding-bottom: 72px;
-
     background-image: linear-gradient(to top, $special_grey-6 463px, $basic_white 0);
   }
 
@@ -55,7 +51,6 @@
 
   .example__text {
     margin-bottom: 53px;
-
     font-size: 16px;
     line-height: 24px;
   }
@@ -81,7 +76,6 @@
   .example {
     padding-top: 0;
     padding-bottom: 0;
-
     background: linear-gradient(to bottom, $basic_white 190px, transparent 190px),
       linear-gradient(to right, #f2f2f2 67%, #eaeaea 67%);
   }
@@ -89,7 +83,6 @@
   .example__inner {
     display: flex;
     padding-bottom: 70px;
-
     background: linear-gradient(to bottom, $basic_white 190px, transparent 190px),
       linear-gradient(to right, #f2f2f2 72.5%, #eaeaea 72.5%);
   }

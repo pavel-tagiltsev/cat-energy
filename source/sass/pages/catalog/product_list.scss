@@ -2,14 +2,15 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+
   @include container-out-on-mobile;
 
   & .pl_item {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #ebebeb;
-    margin: 0 0 20px;
     width: 100%;
+    margin: 0 0 20px;
+    border-top: 1px solid #ebebeb;
   }
 }
 
@@ -17,11 +18,12 @@
   .product_list {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+
     @include container-in;
 
     & .pl_item {
-      border-top: none;
       margin-bottom: 0;
+      border-top: none;
     }
   }
 }
@@ -30,11 +32,12 @@
   .product_list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 60px;
+
     @include container-in;
 
     & .pl_item {
-      border-top: none;
       margin-bottom: 0;
+      border-top: none;
     }
   }
 }
